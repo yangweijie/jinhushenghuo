@@ -1,0 +1,75 @@
+<extend name="Public:fe_theme" />
+
+<block name="content">
+
+	<!-- 面包屑导航 -->
+	<div class="breadcrumb wrapper">
+		<span class="icon icon-crumb"></span>
+		<a href="javascript:;">首页</a>
+		<volist name="path" id="vo">
+			<span class="division">></span>
+			<a href="{:U('detail?id='.$vo['id'])}"><span>{$vo.c_name}</span></a>
+		</volist>
+	</div>
+
+	<div class="wrapper cf">
+		<!-- 边栏导航 -->
+		<div class="side-nav">
+			<ul class="nav-list">
+				<volist name="siblings" id="vo">
+					<li <eq name="vo.id" value="$_GET.id"> class="current"</eq>><a href="{:url('detail',array('id'=>$vo['id']),$vo['link'])}"><i class="icon icon-navlist"></i>{$vo.c_name}</a></li>
+				</volist>
+			</ul>
+		</div>
+
+		<!-- 内容区 -->
+		<div class="content-wrap list-wrap">
+			<div class="list-title">
+				<i class="icon icon-list-title"></i>
+				<em>{$current_nav.c_name}</em>
+			</div>
+			<div>
+				<div class="title-nav">
+					<volist name="types" id="vo">
+					<span <eq name="vo.id" value="$_GET.type">class="selected"</eq>><a href="{:U('special?type='.$vo['id'])}">{$vo.name}</a><b class="solid"></b></span>
+					</volist>
+				</div>
+				<ul class="list procon-content">
+				<volist name="subnav" id="vo">
+					<li>
+						<div class="hd">
+							<i class="icon icon-dot"></i>
+							<a href="javascript:;" class="nav_li">{$vo.name}</a>
+						</div>
+						<div class="bd">
+							<p> <strong>内容：</strong> </p>
+
+							<div>{$vo.description}</div>
+							<p>
+								<strong class="vtm">更多：</strong>
+								<a class="vtm" href="{:U('detail',array('id'=>$vo['pid']))}">详细信息</a>
+							</p>
+						</div>
+					</li>
+				</volist>
+				<empty name="subnav">暂无内容</empty>
+			</ul>
+			</div>
+		</div>
+	</div>
+</block>
+
+<block name="foot_js">
+	<script type="text/javascript">
+	$(function(){
+		$('.procon-content a.nav_li').click(function(){
+			$li = $(this).closest('li');
+			$li.toggleClass('active');
+			return false;
+		})
+		// $('.procon-content li').click(function(){
+		// 	if
+		// });
+	})
+	</script>
+</block>

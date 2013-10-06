@@ -1,0 +1,47 @@
+<extend name="Public:fe_theme" />
+
+<block name="content">
+
+	<!-- 面包屑导航 -->
+	<div class="breadcrumb wrapper">
+		<span class="icon icon-crumb"></span>
+		<a href="javascript:;">首页</a>
+		<volist name="path" id="vo">
+			<span class="division">></span>
+			<a href="{:U('detail?id='.$vo['id'])}"><span>{$vo.c_name}</span></a>
+		</volist>
+	</div>
+
+	<div class="wrapper cf">
+		<!-- 边栏导航 -->
+		<div class="side-nav">
+			<ul class="nav-list">
+				<volist name="siblings" id="vo">
+					<li <eq name="vo.id" value="$_GET.id"> class="current"</eq>><a href="{:U('detail?id='.$vo['id'])}"><i class="icon icon-navlist"></i>{$vo.c_name}</a></li>
+				</volist>
+			</ul>
+		</div>
+
+		<!-- 内容区 -->
+		<div class="content-wrap list-wrap">
+			<div class="list-title">
+				<i class="icon icon-list-title"></i>
+				<em>{$current_nav.c_name}</em>
+			</div>
+			<ul class="list art-list">
+				<volist name="subnav" id="vo">
+					<li>
+						<i class="icon icon-dot"></i>
+						<present name="vo.nav_id">
+							<a href="{:U('detail?id='.$vo['nav_id'].'&article_id='.$vo['id'])}">{$vo.title}</a>
+						<else />
+							<a href="{:U('detail?id='.$vo['id'])}">{$vo.c_name}</a>
+						</present>
+
+					</li>
+				</volist>
+				<empty name="subnav">暂无内容</empty>
+			</ul>
+		</div>
+	</div>
+</block>

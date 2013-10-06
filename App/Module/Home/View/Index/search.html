@@ -1,0 +1,75 @@
+<extend name="Public:fe_theme" />
+
+<block name="content">
+
+	<div class="wrapper cf">
+
+		<!-- 搜索 -->
+		<form action="{:U('')}" method="get" class="search-bar cf">
+			<div class="search-logo">
+				<i class="icon icon-search"></i><em>搜索结果</em>
+			</div>
+			<input type="text" name="keyword" class="search-key" value="{$_GET.keyword}">
+			<a class="btn" onclick="$(this).parents('form').submit();"></a>
+		</form>
+
+		<div class="search-count">
+			约有<strong>{$count}</strong>项符合搜索<strong>{$_GET.keyword|trim}</strong>的查询结果，耗时{$cost_time}秒，以下是第<strong>{$start_row} - {$end_row}</strong>项。
+		</div>
+
+		<!-- 搜索主体 -->
+		<div class="cf">
+			<!-- 搜索列表 -->
+			<div class="search-list">
+				<volist name="list" id="vo">
+				<!-- 一个搜索结果 -->
+				<dl>
+					<dt>
+						<a href="{:U('detail?id='.$vo['nav_id'].'&article_id='.$vo['id'])}" target="_blank">
+							{$vo.title|highlight_map=###,$_GET['keyword']}
+						</a>
+					</dt>
+					<dd class="cont-preview">
+						{$vo.content|strip_tags|highlight_map=###,$_GET['keyword']}
+					</dd>
+					<dd class="adr">{:U('detail?id='.$vo['nav_id'].'&article_id='.$vo['id'],'',true,false,true)} - {$vo.time_text}</dd>
+				</dl>
+				</volist>
+			</div>
+
+			<!-- 搜索右边 -->
+			<div class="search-right">
+				<!-- 排序 -->
+				<div class="search-sort">
+				<!-- 	<dl>
+						<dt>排序方式</dt>
+						<dd>相关度</dd>
+						<dd><i class="icon icon-dot"></i><a href="javscript:;">发布时间</a></dd>
+					</dl> -->
+					<dl>
+						<dt>按时间筛选结果</dt>
+						<dd><i class="icon icon-dot"></i><a href="{:U('search','keyword='.$_GET['keyword'])}">全部</a></dd>
+						<dd><i class="icon icon-dot"></i><a href="{:U('search','keyword='.$_GET['keyword'].'&time_limit=-7days')}">一周内</a></dd>
+						<dd><i class="icon icon-dot"></i><a href="{:U(search,'keyword='.$_GET['keyword'].'&time_limit=-1month')}">一月内</a></dd>
+						<dd><i class="icon icon-dot"></i><a href="{:U(search,'keyword='.$_GET['keyword'].'&time_limit=-3month')}">三月内</a></dd>
+						<dd><i class="icon icon-dot"></i><a href="{:U(search,'keyword='.$_GET['keyword'].'&time_limit=-1year')}">一年内</a></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<!-- 分页 -->
+		<div class="page">
+			{$page}
+		</div>
+
+		<!-- 底部搜索 -->
+		<form action="{:U('')}" method="get" class="search-bar b0 cf">
+			<input type="text" name="keyword" class="search-key" value="{$_GET.keyword}">
+			<a class="btn" href="javascript:;"></a>
+		</form>
+	</div>
+</block>
+<block name="js">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</block>

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>顶想客户关系维系系统</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
+	<link rel="icon" href="__PUBLIC__/images/favicon.ico" type="img/x-icon"/>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/Migrate.js"></script>
+	<script src="__PUBLIC__/js/thinkbox/jquery.thinkbox.js"></script>
+</head>
+<body>
+	<div id="login_header">
+		<div class="wrapper">
+			<a href="javascript:;" class="dib">
+				<img src="__PUBLIC__/images/logo.png" alt="顶想科技有限公司">
+			</a>
+		</div>
+	</div>
+	<div id="login_content">
+		<div class="wrapper" >
+			<div class="login_panel">
+				<h3>登录</h3>
+				<div class="login_mod">
+					<form action="{:U('System/check')}" method="post" onsubmit="return ajaxLogin();">
+						<div class="login_form">
+							<div class="login_un">
+								<span>
+									<i class="icon24_login un"></i>
+								</span>
+								<input type="text" value="administrator" name="loginName" placeholder="请填写用户名">
+							</div>
+							<div class="login_pwd">
+								<span>
+									<i class="icon24_login pwd"></i>
+								</span>
+								<input type="password" name="loginPwd" placeholder="请填写用户密码">
+							</div>
+							<div class="login_code">
+								<span>
+									<i class="icon24_login code"></i>
+								</span>
+								<input type="text" name="validate" placeholder="请填写验证码">
+								<img title="点击刷新验证码" src="__URL__/verify" onClick="this.src='__URL__/verify?'+(new Date()).getTime()" />
+							</div>
+						</div>
+						<div class="login_btn_panel">
+							<button class="login_btn" type="submit">登录</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="login_footer">
+		<div class="wrapper">
+			<p>Copyright © 2008-2013 REDINFO. All Rights Reserved.</p>
+			<p><a href="#">联系我们 |</a><a href="#"> 免责声明 |</a><a href="#"> 加入我们</a></p>
+		</div>
+
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+/*ajax 登录*/
+function ajaxLogin(){
+	var username = $("input[name='loginName']").val();
+	var pwd = $("input[name='loginPwd']").val();
+	var validate = $("input[name='validate']").val();
+	if(username == ""){
+		$.thinkbox.error("登录名为空");
+		return false;
+	}
+	if(pwd == ""){
+		$.thinkbox.error("密码为空");
+		return false;
+	}
+	if(validate == ""){
+		$.thinkbox.error("验证码为空");
+		return false;
+	}
+        // var rememberMe = $('.login_remember_pwd:eq(0)').attr('rememberMe');
+        var rememberMe = 1;
+        $.ajax({
+        	type:'POST',
+        	url:'{:U("System/check")}',
+        	async:false,
+        	data:{
+        		loginName:username,
+        		loginPwd:pwd,
+        		validate:validate,
+        		rememberMe: rememberMe
+        	},
+        	dataType:'json',
+        	success:function(data){
+        		console.log(data)
+        		if(data.status == 1){
+        			location.href = data.data;
+        		}else{
+        			$.thinkbox.error(data.info);
+        		}
+        	}
+        })
+        return false;
+    }
+
+    $(function(){
+		//登陆界面焦点
+		$(".login_un input").focus(function(){
+			$(this).parent("div").addClass("login_form_unfocus");
+		})
+		$(".login_un input").focusout(function(){
+			$(this).parent("div").removeClass("login_form_unfocus");
+		})
+		$(".login_code input").focus(function(){
+			$(this).parent("div").addClass("login_form_unfocus");
+		})
+		$(".login_code input").focusout(function(){
+			$(this).parent("div").removeClass("login_form_unfocus");
+		})
+		$(".login_pwd input").focus(function(){
+			$(this).parent("div").addClass("login_form_unfocus");
+			$(this).parent("div").removeClass("login_pwd");
+			$(".login_un").addClass("login_un_remove");
+			$(".login_code").addClass("login_code_remove");
+		})
+		$(".login_pwd input").focusout(function(){
+			$(this).parent("div").removeClass("login_form_unfocus");
+			$(this).parent("div").addClass("login_pwd");
+			$(".login_un").removeClass("login_un_remove");
+			$(".login_code").removeClass("login_code_remove");
+		})
+
+		//
+	})
+    </script>

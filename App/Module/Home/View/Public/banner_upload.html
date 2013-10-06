@@ -1,0 +1,13 @@
+console.log(data)
+data = $.parseJSON(data);
+console.log(data)
+					if(data.status){
+						$.thinkbox.success("上传成功");
+						$table = $('#file_upload').parents('table');
+						$table.find('tr:gt(2)').remove();
+						$table.append('<tr><td></td><td>'+data.content+'</td><td></td></tr>');
+					}else{
+						var msg = '<a title="' +data.error + '">上传失败<a/>';
+						console.log(data.error);
+						$.thinkbox.error(msg);
+					}

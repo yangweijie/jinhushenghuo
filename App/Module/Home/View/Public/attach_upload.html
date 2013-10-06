@@ -1,0 +1,9 @@
+console.log(data)
+data = $.parseJSON(data);
+console.log(data)
+					if(data.status){
+						$.thinkbox.success("上传成功");
+					}else{
+						var msg = '<a title="' +data.error + '">上传失败<a/>';
+						$.thinkbox.error(msg);
+					}

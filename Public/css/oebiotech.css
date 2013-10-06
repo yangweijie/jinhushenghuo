@@ -1,0 +1,756 @@
+/**
+ * 欧易生物前台页面样式
+ */
+
+
+/* 重置及基本布局
+------------------------------------------ */
+html,body {
+	font: 12px/1.5 "microsoft yahei", Helvetica, Tahoma, Arial, sans-serif;
+	color:#404040;
+	background-color:#fff;
+}
+body,p,h1,h2,h3,h4,h5,h6,
+dl,dt,dd,ul,ol,li,
+form,select,input,textarea,button {
+	margin:0;
+	padding:0;
+}
+ol,ul {
+	list-style:none;
+}
+img {
+	max-width: 100%;
+	border:0 none;
+}
+a {
+	color: #404040;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+input,button,textarea,select,option {
+	font-family:inherit;
+	font-size:100%;
+	outline: 0;
+}
+textarea {
+	overflow: auto;
+	resize: none;
+}
+
+/* 布局样式 */
+.cf,.nav {
+	*zoom: 1;
+}
+.cf:before, .cf:after,
+.nav:before, .nav:after {
+	display: table;
+	content: "";
+}
+.cf:after,.nav:after {
+	clear: both;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+	min-width: 960px;
+}
+.hidden {
+	display: none!important;
+}
+
+/* 导航列表 */
+.nav li {
+	float: left;
+	display: inline;
+}
+.nav-list li {
+	float: none;
+	display: block;
+}
+.nav li a,
+.nav li a:hover,
+.nav-list li a,
+.nav-list li a:hover {
+	display: block;
+	text-decoration: none;
+}
+
+/* icon图标 */
+.icon {
+	display: inline-block;
+	margin-right: 3px;
+	background-image: url(../images/oebiotech_bg.png);
+	background-position: no-repeat;
+}
+
+/* 头部
+------------------------------------------ */
+.header {
+	margin-bottom: 20px;
+}
+/* 顶部链接及联系电话 */
+.header-bar {
+	margin-bottom: 20px;
+	height: 35px;
+	line-height: 35px;
+	color: #000;
+	border-bottom: 1px solid #ebebeb;
+}
+.header-bar a {
+	display: inline-block;
+	margin-right: 10px;
+	color: #000;
+	text-decoration: none;
+}
+.header-bar .icon {
+	float: left;
+	margin: 9px 4px 0 0;
+}
+.header-bar .tel {
+	float: right;
+	font-size: 14px;
+}
+.header-bar .tel-num {
+	font-size: 18px;
+}
+.icon-favorites {
+	width: 8px;
+	height: 16px;
+	background-position: -280px -90px;
+}
+.icon-blog,
+.icon-sina {
+	width: 16px;
+	height: 16px;
+}
+.icon-blog {
+	background-position: -290px -90px;
+}
+.icon-sina {
+	background-position: -325px -115px;
+}
+.header-bar .icon-user {
+	margin-top: 12px;
+	width: 14px;
+	height: 14px;
+	background-position: -250px -115px;
+}
+.logo {
+	float: left;
+	width: 320px;
+	height: 41px;
+	line-height: 9;
+	font-size: 0;
+	overflow: hidden;
+	background: url(../images/oebiotech_bg.png) no-repeat 0 -40px;
+}
+
+/* 头部搜索 */
+.header-search {
+	position: relative;
+	float: right;
+	width: 350px;
+	height: 31px;
+	background: url(../images/oebiotech_bg.png) no-repeat 0 0;
+}
+.header-search .sch-text {
+	float: left;
+	margin: 4px;
+	padding: 2px 14px 2px 4px;
+	width: 270px;
+	height: 19px;
+	line-height: 19px;
+	border: 0;
+}
+.header-search .sch-btn {
+	float: left;
+	margin-left: 7px;
+	width: 47px;
+	height: 31px;
+	cursor: pointer;
+	border: 0;
+	background-color: transparent;
+}
+.icon-search-arrow {
+	position: absolute;
+	right: 47px;
+	top: 4px;
+	width: 18px;
+	height: 21px;
+	cursor: pointer;
+	background-position: -125px -125px;
+}
+.header-search .submenu {
+	position: absolute;
+	top: 27px;
+	right: 54px;
+	border: 4px solid #949494;
+}
+.header-search .submenu a {
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+}
+.header-search .submenu a:hover {
+	background-color: #f5f5f5;
+}
+
+/* 主导航 */
+.main-nav {
+	margin-bottom: 20px;
+	min-width: 960px;
+	height: 31px;
+	line-height: 31px;
+	border-top: 1px solid #57b300;
+	border-bottom: 1px solid #57b300;
+	background-color: #67c700;
+}
+.main-nav .nav {
+	margin-left: 2px;
+}
+.main-nav .nav .item {
+	padding: 0 25px;
+	font-size: 15px;
+	color: #fff;
+	background: url(../images/nav_solid.png) no-repeat right center;
+}
+.main-nav .nav .last {
+	background-image: none;
+}
+.nav-solid-left,
+.nav-solid-right {
+	margin-top: 4px;
+	width: 2px;
+	height: 23px;
+	background: url(../images/nav_solid.png) repeat 0 0;
+}
+.nav-solid-left {
+	float: left;
+}
+.nav-solid-right {
+	float: right;
+}
+.main-nav .subnav {
+	position: absolute;
+	z-index: 90;
+	background-color: #67c700;
+}
+.main-nav .subnav a {
+	padding: 0 10px;
+	line-height: 35px;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+}
+.main-nav .subnav a:hover {
+	background-color: #4f9702;
+}
+
+/* banner
+------------------------------------------ */
+.slide-container {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+/* 大图展示区 */
+.slide-pic-wrap {
+	width: 960px;	/* 宽高比 100:35 */
+	height: 330px;
+	overflow: hidden;
+}
+.slide-pic-wrap .spw-box {
+	position: relative;
+}
+.slide-pic-wrap .spw-box li {
+	position: absolute;
+}
+.slide-pic-wrap .spw-box img {
+	vertical-align: top;
+	width: 960px;
+}
+
+/* 幻灯数字或圆点列表 */
+.slide-numlist {
+	position: absolute;
+	z-index: 99;
+	right: 7px;
+	bottom: 15px;
+}
+.slide-numlist li a {
+	margin-right: 8px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #fff;
+	border-radius: 10px;
+	background-color: #999;
+	background-color: rgba(0,0,0,.4);
+}
+.slide-numlist li a:hover,
+.slide-numlist .current a {
+	background-color: #b9b92b;
+	background-color: rgba(135,185,0,.6);
+}
+
+/* 首页板块列表
+------------------------------------------ */
+/* 公共板块 */
+.columns {
+	border: 1px solid #bfbfbf;
+}
+.columns .columns-title {
+	float: left;
+	height: 29px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.columns .columns-title i ,
+.columns .columns-title em {
+	font-style: normal;
+	vertical-align: middle;
+}
+.columns .columns-title i {
+	display: inline-block;
+	background-image: url(../images/oebiotech_bg.png);
+	background-repeat: no-repeat;
+}
+.columns .hd .more {
+	float: right;
+	margin: 5px 10px 0 0;
+	height: 18px;
+}
+.columns .hd .more:hover {
+	text-decoration: none;
+}
+.columns .icon-more {
+	width: 10px;
+	height: 5px;
+	vertical-align: 2px;
+	background-position: -290px -115px;
+}
+.columns .bd {
+	padding: 15px;
+}
+.list li {
+	line-height: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.list li a {
+	color: #808080;
+	vertical-align: middle;
+}
+.icon-dot {
+	width: 3px;
+	height: 2px;
+	vertical-align: middle;
+	background-position: -270px -135px;
+}
+
+/* 绿色板块 */
+.style-1 {
+	float: left;
+	margin-right: 10px;
+	width: 355px;
+}
+.style-1 .hd {
+	color: #20951e;
+	border-bottom: 1px solid #20951e;
+	background: url(../images/columns_style_1.png) repeat-x 0 0;
+}
+.style-1 .more {
+	color: #1f954c;
+}
+.index-dyn,
+.index-ask {
+	width: 52px;
+	height: 29px;
+}
+.index-dyn {
+	background-position: -125px -90px;
+}
+.index-ask {
+	background-position: -50px -90px;
+}
+
+/* 蓝色板块 */
+.index-side {
+	float: left;
+	width: 226px;
+}
+.style-2 {
+	float: left;
+	margin-bottom: 10px;
+	width: 224px;
+}
+.style-2 .hd {
+	padding: 0 0 2px 10px;
+	line-height: 29px;
+	color: #0754a6;
+	border-bottom: 1px solid #bfbfbf;
+	background: url(../images/columns_style_2.png) repeat-x 0 0;
+}
+.style-2 .index-down {
+	margin-right: 5px;
+	width: 12px;
+	height: 15px;
+	background-position: -310px -90px;
+}
+.style-2 .index-contact {
+	margin-right: 5px;
+	width: 18px;
+	height: 13px;
+	background-position: -325px -90px;
+}
+.style-2 .more {
+	color: #0754a6;
+}
+.kefu {
+	text-align: center;
+}
+.kefu a:hover {
+	text-decoration: none;
+}
+.kefu .mr {
+	margin-right: 20px;
+}
+.icon-kefu, .icon-qq {
+	display: inline-block;
+	background: url(../images/oebiotech_bg.png) no-repeat;
+}
+.icon-kefu {
+	margin-right: 4px;
+	width: 25px;
+	height: 23px;
+	vertical-align: -8px;
+	background-position: -155px -125px;
+}
+.icon-qq {
+	margin-right: 4px;
+	width: 21px;
+	height: 22px;
+	vertical-align: -8px;
+	background-position: -185px -125px;
+}
+
+/* 列表页及详细页
+------------------------------------------ */
+/* 面包屑 */
+.breadcrumb {
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	color: #999;
+	border-bottom: 1px solid #cfcfcf;
+}
+.breadcrumb .home {
+	display: inline-block;
+	text-align: center;
+	line-height: 21px;
+}
+.breadcrumb .division {
+	margin: 0 5px;
+	font-size: 14px;
+	color: #000;
+}
+.icon-crumb {
+	width: 5px;
+	height: 10px;
+	background-position: -250px -135px;
+}
+
+/* 边栏导航 */
+.side-nav {
+	float: left;
+	padding: 10px;
+	width: 188px;
+	border: 1px solid #cfcfcf;
+	background: url(../images/nav_list_top.png) no-repeat center 0;
+}
+.side-nav li {
+	height: 35px;
+	line-height: 35px;
+	background: url(../images/nav_list_item.png) no-repeat center bottom;
+}
+.side-nav .current a {
+	color: #5085bc;
+}
+.icon-navlist {
+	margin-right: 10px;
+	width: 6px;
+	height: 6px;
+	background-position: -310px -115px;
+}
+
+/* 右边内容区 */
+.content-wrap {
+	margin-left: 230px;
+	min-height: 300px;
+	border: 1px solid #cfcfcf;
+}
+.list-wrap {
+	padding: 15px;
+}
+.list-title {
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #016CD6;
+	border-bottom: 4px solid #016cd6;
+}
+.list-title em {
+	font-style: normal;
+	vertical-align: middle;
+}
+.icon-list-title {
+	width: 10px;
+	height: 10px;
+	vertical-align: middle;
+	background-position: -270px -115px;
+}
+.art-list li {
+	padding-left: 6px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px dashed #cfcfcf;
+}
+.detail-img img {
+	display: block;
+	width: 728px;
+}
+.detail-wrap {
+	margin-top: 1px;
+	padding: 15px;
+	background: url(../images/top_bg.png) repeat-x 0 0;
+}
+.title-nav {
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	border-bottom: 4px solid #016cd6;
+}
+.title-nav span {
+	display: inline-block;
+	margin-bottom: 4px;
+	padding-right: 4px;
+}
+.title-nav span a {
+	display: inline-block;
+	padding: 0 8px;
+	height: 24px;
+	line-height: 24px;
+	color: #555;
+	vertical-align: middle;
+}
+.title-nav span a:hover,
+.title-nav .selected a {
+	color: #fff;
+	text-decoration: none;
+	background-color: #76a6d9;
+}
+.title-nav span .solid {
+	display: inline-block;
+	margin-left: 6px;
+	width: 1px;
+	height:18px;
+	vertical-align: middle;
+	background-color: #777;
+}
+
+/* 特殊页 */
+.procon-content li .hd {
+	border-bottom: 1px dashed #cfcfcf;
+}
+.procon-content li .bd {
+	display: none;
+	padding-left: 10px;
+}
+.procon-content .active .bd {
+	display: block;
+}
+.procon-content li .bd p {
+	margin: 10px 0;
+	line-height: 1.6;
+	word-break: break-all;
+	white-space: normal;
+}
+.procon-content li .bd a {
+	color: #5085bc;
+}
+.vtm {
+	vertical-align: middle;
+}
+.procon-content .fz {
+	font-size: 14px;
+}
+
+/* 搜索页
+------------------------------------------ */
+/* 搜索表单 */
+.search-bar {
+	margin-bottom: 1px;
+	padding-bottom: 19px;
+	border-bottom: 1px solid #dedede;
+}
+.search-bar .search-logo {
+	float: left;
+	margin-right: 60px;
+	cursor: default;
+}
+.search-bar .search-logo em {
+	font-style: normal;
+	font-size: 24px;
+	vertical-align: middle;
+}
+.icon-search {
+	width: 45px;
+	height: 40px;
+	vertical-align: middle;
+	background-position: 0 -90px;
+}
+.search-bar .search-key {
+	float: left;
+	margin: 7px 10px 0 0;
+	padding: 4px 3px 2px;
+	width: 250px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #ddd;
+	border-top-width: 0;
+	background: url(../images/search_text_solid.png) repeat-x 0 top;
+}
+.search-bar .btn {
+	float: left;
+	margin-top: 12px;
+	width: 65px;
+	height: 20px;
+	background: url(../images/oebiotech_bg.png) no-repeat -50px -125px;
+}
+.b0 {
+	border-bottom: 0;
+}
+
+/* 搜索统计条 */
+.search-count {
+	margin-bottom: 20px;
+	padding-right: 10px;
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+	background-color: #f0f0f0;
+}
+.search-count strong {
+	margin: 0 4px;
+}
+
+/* 搜索列表 */
+.search-list {
+	float: left;
+	margin-right: 80px;
+	width: 680px;
+}
+.search-list dl {
+	margin-bottom: 20px;
+	line-height: 1.6;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.search-list dl dt a {
+	font-size: 16px;
+	color: #06d;
+	text-decoration: underline;
+}
+.search-list dl dd {
+	color: #6e6e6e;
+	font-size: 14px;
+}
+.search-list .keywords {
+	font-style: normal;
+	color: #f00;
+}
+.search-list .adr {
+	font-size: 12px;
+	color: #999;
+}
+
+/* 搜索右边 */
+.search-right {
+	float: left;
+	padding-left: 10px;
+	width: 189px;
+	border-left: 1px solid #cfcfcf;
+}
+.search-sort dl {
+	margin-bottom: 15px;
+}
+.search-sort dl dt {
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.search-sort dl dd {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 10px;
+	line-height: 1.8;
+}
+.search-sort dl dd a {
+	color: #06d;
+}
+
+/* 分页 */
+.page {
+	margin-bottom: 20px;
+}
+.page a {
+	margin-right: 3px;
+	font-size: 14px;
+	color: #06d;
+}
+
+
+/* 底部
+------------------------------------------ */
+.footer {
+	margin-top: 20px;
+	padding-top: 14px;
+	min-width: 960px;
+	height: 90px;
+	line-height: 1.8;
+	text-align: center;
+	background: url(../images/footer_bg.png) repeat-x;
+}
+.footer .help-link span {
+	margin: 0 5px;
+}
+#gototop {
+	display: block;
+	position: fixed;
+	bottom: 150px;
+	margin-left: 1000px;
+	padding: 4px 0;
+	width: 20px;
+	line-height: 1.4;
+	text-align: center;
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+#gototop:hover {
+	color: #fff;
+	text-decoration: none;
+	background-color: #67c700;
+}

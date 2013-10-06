@@ -1,0 +1,119 @@
+<extend name="Public:bg_theme" />
+<block name="content">
+	<!-- bootstrap -->
+	<script type="text/javascript" src="__PUBLIC__/js/bootstrap/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap/css/bootstrap.css">
+	<!-- x-editable -->
+	<script type="text/javascript" src="__PUBLIC__/js/bootstrap-editable-1.4.5/bootstrap-editable/js/bootstrap-editable.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap-editable-1.4.5/bootstrap-editable/css/bootstrap-editable.css">
+
+	<div class="location">
+		<i>当前位置：</i>
+		<a href="{:U('')}" class="nav_a">留言管理</a>
+	</div>
+	<div class="title_form">
+		<div class="title_search">
+			<!-- <form action="{:U('')}" method="post">
+				<label for="">用户组：</label>
+				<select name="group_id" class="title_select input_style input_focus short_select">
+					<volist name="groups" id="gr">
+						<option value="{$key}"<eq name="_POST.group_id" value="$key"> selected</eq>>{$gr}</option>
+					</volist>
+				</select>
+				<label for="">用户名：</label>
+				<input type="text" name="name" class="title_text input_style input_focus" value="{:I('name')}">
+				<label for="">手机号：</label>
+				<input type="text" name="tel" class="title_text input_style input_focus" value="{:I('tel')}">
+				<label for="">Email：</label>
+				<input type="text" name="email" class="title_text input_style input_focus" value="{:I('email')}">
+				<button class="find_btn">搜索</button>
+			</form> -->
+		</div>
+		<a href="{:U('add')}"><button class="find_btn add_btn">添加</button></a>
+		<button class="find_btn add_btn fr" id="sortButton" data-operate="__URL__/sort/value/Banner-">排序</button>
+	</div>
+	<div class="content_table">
+	<form action="{:U('delete')}" method="post" id="del_form">
+		<table id="del_table">
+			<tr>
+				<th><input type="checkbox" name="checkAll"></th>
+				<th>排序</th>
+				<th>名称</th>
+				<th>描述</th>
+				<th>文件名</th>
+				<th>外链</th>
+				<th>创建时间</th>
+			</tr>
+			<volist name="list" id="vo">
+			<tr>
+				<td>
+					<input type="checkbox" name="id[]" value="{$vo.id}" id="checkEach">
+				</td>
+				<td>
+					{$vo.order}
+				</td>
+				<td>
+					{$vo.name}
+				</td>
+				<td>
+					{$vo.desc}
+				</td>
+				<td src="__ROOT__{$vo.src}">
+					<a href="javascript:;">{$vo.src}</a>
+				</td>
+				<td>
+					<a href="javascript:;" class="editable" data-name="link" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.link}</a>
+				</td>
+				<td>
+					{$vo.time_text}
+				</td>
+			</tr>
+			</volist>
+		</table>
+	</div>
+	<div class="content_btn">
+		<button class="find_btn" id="batch_del">删除</button>
+	</div>
+	</form>
+	<script type="text/javascript">
+		$(function(){
+			//全选
+			$("input[name='checkAll']").click(function(){
+				$("input#checkEach").attr("checked",this.checked);
+			})
+			//初始化editable
+			$('.editable').editable({
+				emptytext:'空',
+				success: function(response, newValue) {
+					if(!response.status){
+						return response.info;
+					}
+				},
+				mode: 'inline'
+			});
+
+			//批量删除
+			$('#batch_del').click(function(){
+				if($('#del_form input[name=id[]]:checked').length ==0){
+					$.thinkbox.error('至少选择一个');
+				}else{
+					ajaxForm('#del_table',function(data){
+						defCallback(data,current_url);
+					});
+				}
+				return false;
+			});
+
+			$('td[src]').click(function(){
+
+				$.thinkbox('<img src="'+$(this).attr('src')+'">',{dataEle:this});
+			});
+		})
+	</script>
+</block>
+<block name="foot_js">
+	$(function(){
+		//左侧导航子页面高亮选中
+		highlight_sidebar('{:U('index')}');
+	});
+</block>

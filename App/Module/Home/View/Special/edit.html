@@ -1,0 +1,76 @@
+<extend name="Public:bg_theme" />
+
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/js/kindeditor/default/default.css" />
+</block>
+
+<block name="js">
+	<script charset="utf-8" src="__PUBLIC__/js/kindeditor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/js/kindeditor/zh_CN.js"></script>
+</block>
+
+<block name="content">
+	<script type="text/javascript" src="__PUBLIC__/js/Validform_v5.3.2.js"></script>
+	<div class="location">
+		<i>当前位置：</i>
+		<a href="javascript:;" class="nav_a">导航管理 - </a>
+		<a href="{:U('index')}" class="nav_a">特殊列表 - </a>
+		<a href="{:U('')}" class="nav_a">编辑特殊描述</a>
+	</div>
+	<form class="addform" action="{:U('update')}" method="post">
+		<div class="manage_table">
+			<table>
+				<tr>
+					<td>中文名(*)：</td>
+					<td>
+						{$record.name}
+					</td>
+					<td>
+						<div class="Validform_checktip"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>描述：</td>
+					<td>
+						<textarea id="description" class="input_focus hidden" type="text" name="description" style="width:670px;">
+						{$record.description}
+						</textarea>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="batch_save">
+			<input class="hidden" name="model" value="Nav" />
+			<input type="hidden" name="id" value="{$record.id}" readonly>
+			<button type="submit" class="find_btn" >确定</button>
+			<button type="reset" class="find_btn">重置</button>
+			<button onclick="location.href='{:U('index')}';return false;" class="find_btn">返回列表</button>
+		</div>
+	</form>
+	<script type="text/javascript">
+		$(function(){
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="description"]', {
+					allowFileManager : true,
+					themesPath: K.basePath,
+					height: '500px',
+					resizeType: 0,
+					pasteType : 2,
+					fileManagerJson : '{:U('fileManagerJson')}',
+					uploadJson : '{:U('uploadJson')}'
+				});
+			});
+
+			$(".addform").Validform({
+				tiptype:2
+			});
+		})
+	</script>
+</block>
+<block name="foot_js">
+	$(function(){
+		//左侧导航子页面高亮选中
+		highlight_sidebar('{:U('index')}');
+	});
+</block>

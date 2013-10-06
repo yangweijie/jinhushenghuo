@@ -1,0 +1,101 @@
+<extend name="Public:bg_theme" />
+
+<block name="css">
+	<link rel="stylesheet" href="__PUBLIC__/js/kindeditor/default/default.css" />
+</block>
+
+<block name="js">
+	<script charset="utf-8" src="__PUBLIC__/js/kindeditor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/js/kindeditor/zh_CN.js"></script>
+</block>
+
+<block name="content">
+	<script type="text/javascript" src="__PUBLIC__/js/Validform_v5.3.2.js"></script>
+	<div class="location">
+		<i>当前位置：</i>
+		<a href="javascript:;" class="nav_a">导航管理 - </a>
+		<a href="{:U('index')}" class="nav_a">特殊列表 - </a>
+		<a href="{:U('')}" class="nav_a">添加特殊</a>
+	</div>
+	<form class="addform" action="{:U('insert')}" method="post">
+		<div class="manage_table">
+			<table>
+				<tr>
+					<td>排序：</td>
+					<td>
+						<input class="input_style input_focus content_text" type="text" name="order" >
+					</td>
+				</tr>
+				<tr>
+					<td>上级导航：</td>
+					<td>
+						<select name="pid">
+						<volist name="nav_tree" id="cate">
+							<option value="{$cate.id}"<eq name="_GET.pid" value="$cate.id"> selected</eq>>{$cate.title_show}{$cate.c_name}</option>
+						</volist>
+						</select>
+						<a href="{:U('Nav/index?pid='.$_GET['pid'])}">返回上级</a>
+					</td>
+				</tr>
+				<tr>
+					<td>中文名(*)：</td>
+					<td>
+						<input class="input_style input_focus content_text" type="text" name="name" datatype="*1-30" errormsg="存在特殊字符或者超过30个汉字" nullmsg="中文名必填！">
+					</td>
+					<td>
+						<div class="Validform_checktip"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>类型：</td>
+					<td>
+						<select name="type">
+						<volist name="type" id="type">
+							<option value="">请选择</option>
+							<option value="{$key}"<eq name="_GET.pid" value="$type.id"> selected</eq>>{$type}</option>
+						</volist>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>描述：</td>
+					<td>
+						<textarea id="description" class="input_focus hidden" type="text" name="description" style="width:670px;">
+						</textarea>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="batch_save">
+			<input class="hidden" name="model" value="Special" />
+			<button type="submit" class="find_btn" >确定</button>
+			<button type="reset" class="find_btn">重置</button>
+		</div>
+	</form>
+	<script type="text/javascript">
+		$(function(){
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="description"]', {
+					allowFileManager : true,
+					themesPath: K.basePath,
+					height: '500px',
+					resizeType: 0,
+					pasteType : 2,
+					fileManagerJson : '{:U('fileManagerJson')}',
+					uploadJson : '{:U('uploadJson')}'
+				});
+			});
+
+			$(".addform").Validform({
+				tiptype:2
+			});
+		})
+	</script>
+</block>
+<block name="foot_js">
+	$(function(){
+		//左侧导航子页面高亮选中
+		highlight_sidebar('{:U('index')}');
+	});
+</block>
