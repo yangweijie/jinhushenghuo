@@ -82,16 +82,7 @@
 			});
 
 			//批量删除
-			$('#batch_del').click(function(){
-				if($('#del_form input[name=id[]]:checked').length ==0){
-					$.thinkbox.error('至少选择一个');
-				}else{
-					ajaxForm('#del_table',function(data){
-						defCallback(data,current_url);
-					});
-				}
-				return false;
-			});
+			<include file="Public:batch_delete" />
 		})
 	</script>
 </block>

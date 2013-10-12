@@ -10,16 +10,16 @@ class NavController extends CommonController {
 
 	public function index(){
 		$pid = (int)I('pid');
-		$c_name = trim(I('name'));
+		$name = trim(I('name'));
 		if($pid)
 			$map['pid'] = $pid;
-		else if(!$c_name)
+		else if(!$name)
 			$map['pid'] = 1;
-		if($c_name)
-			$map['c_name'] = array('like',"%{$c_name}%");
-		$current_parent = D('Nav')->field('pid,c_name')->find($pid);
+		if($name)
+			$map['name'] = array('like',"%{$name}%");
+		$current_parent = D('Nav')->field('pid,name')->find($pid);
 		$this->assign('current_parent', $current_parent);
-		$this->_list(array('source'=>'Nav', 'map'=>$map,'order'=>'`order` asc'));
+		$this->_list(array('source'=>'Nav', 'map'=>$map,'order'=>'sort asc'));
 	}
 
 	public function add(){

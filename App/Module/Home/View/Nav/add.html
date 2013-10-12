@@ -31,7 +31,7 @@
 					<td>
 						<select name="pid">
 						<volist name="nav_tree" id="cate">
-							<option value="{$cate.id}"<eq name="_GET.pid" value="$cate.id"> selected</eq>>{$cate.title_show}{$cate.c_name}</option>
+							<option value="{$cate.id}"<eq name="_GET.pid" value="$cate.id"> selected</eq>>{$cate.title_show}{$cate.name}</option>
 						</volist>
 						</select>
 						<a href="{:U('Nav/index?pid='.$_GET['pid'])}">返回上级</a>
@@ -40,28 +40,22 @@
 				<tr>
 					<td>中文名(*)：</td>
 					<td>
-						<input class="input_style input_focus content_text" type="text" name="c_name" datatype="*1-30" errormsg="存在特殊字符或者超过30个汉字" nullmsg="中文名必填！">
+						<input class="input_style input_focus content_text" type="text" name="name" datatype="*1-30" errormsg="存在特殊字符或者超过30个汉字" nullmsg="中文名必填！">
 					</td>
 					<td>
 						<div class="Validform_checktip"></div>
 					</td>
 				</tr>
 				<tr>
-					<td>英文名：</td>
-					<td>
-						<input class="input_style input_focus content_text" type="text" name="e_name" >
-					</td>
-				</tr>
-				<tr>
 					<td>别名：</td>
 					<td>
-						<input class="input_style input_focus content_text" type="text" name="alia" >
+						<input class="input_style input_focus content_text" type="text" name="alia">
 					</td>
 				</tr>
 				<tr>
 					<td>外链：</td>
 					<td>
-						<input class="input_style input_focus content_text" type="text" name="link" >
+						<input class="input_style input_focus content_text" type="text" name="link">
 					</td>
 				</tr>
 				<tr>

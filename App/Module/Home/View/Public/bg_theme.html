@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <block name="title"><title>欧易生物内容系统</title></block>
+    <block name="title"><title>金湖生活网后台系统</title></block>
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/basic.css">
     <link rel="icon" href="__PUBLIC__/images/favicon.ico" type="img/x-icon"/>
     <block name="css"></block>
@@ -91,12 +91,6 @@
                     <li>
                         <a href="{:U('Nav/index')}">导航列表</a>
                     </li>
-                    <li>
-                        <a href="{:U('Nav/type')}">类型列表</a>
-                    </li>
-                    <li>
-                        <a href="{:U('Special/index')}">特殊列表</a>
-                    </li>
                 </ul>
 
                 <h3><i></i>文章管理</h3>
@@ -116,6 +110,11 @@
                 <h3><i></i>留言管理</h3>
                 <ul>
                     <li><a href="{:U('Message/index')}">留言列表</a></li>
+                </ul>
+                <h3><i></i>系统管理</h3>
+                <ul>
+                    <li><a href="{:U('Config/group')}">网站设置</a></li>
+                    <li><a href="{:U('Config/index')}">配置管理</a></li>
                 </ul>
                 <h3><i></i>用户管理</h3>
                 <ul>

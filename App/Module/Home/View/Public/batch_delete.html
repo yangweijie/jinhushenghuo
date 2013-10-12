@@ -1,0 +1,12 @@
+			$('#batch_del').click(function(){
+				if($('#del_form input[name=id[]]:checked').length ==0){
+					$.thinkbox.error('至少选择一个');
+				}else{
+					if(confirm('你确定删除吗')){
+						ajaxForm('#del_table',function(data){
+							defCallback(data,current_url);
+						});
+					}
+				}
+				return false;
+			});

@@ -34,8 +34,7 @@
 		<table id="del_table">
 			<tr>
 				<th><input type="checkbox" name="checkAll"></th>
-				<th>中文名</th>
-				<th>英文名</th>
+				<th>名称</th>
 				<th>上级导航</th>
 				<th>别名</th>
 				<th>自定义url</th>
@@ -47,11 +46,9 @@
 				<td>
 					<input type="checkbox" name="id[]" value="{$vo.id}" id="checkEach"></td>
 				<td>
-					<a href="javascript:;" class="editable" data-name="c_name" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.c_name}</a>
+					<a href="javascript:;" class="editable" data-name="name" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.name}</a>
 					<a href="{:U('index',array('pid'=>$vo['id']))}">进入</a>
 				</td>
-				<td>
-					<a href="javascript:;" class="editable" data-name="e_name" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.e_name}</a></td>
 				<td>
 					<a href="javascript:;" class="editable group" data-name="pid" data-type="select" data-pk="{$vo.id}" data-source="{:U('editbleGetNav')}" sourceError="获取上级导航失败" data-url="{:U('ajaxUpdate')}" data-value="{$vo.pid}">{$vo.p_name}</a>
 				</td>
@@ -65,7 +62,7 @@
 					<a href="javascript:;" class="editable status" data-name="status" data-type="select" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}" data-source="[{value: 0, text: '无效'},{value: 1, text: '有效'}]" data-value="{$vo.status}">{$vo.status|status_text="Nav",###}</a>
 				</td>
 				<td>
-					<a href="javascript:;" class="editable" data-name="order" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.order}</a>
+					<a href="javascript:;" class="editable" data-name="sort" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.sort}</a>
 				</td>
 			</tr>
 			</volist>
@@ -92,16 +89,7 @@
 			});
 
 			//批量删除
-			$('#batch_del').click(function(){
-				if($('#del_form input[name=id[]]:checked').length ==0){
-					$.thinkbox.error('至少选择一个');
-				}else{
-					ajaxForm('#del_table',function(data){
-						defCallback(data,current_url);
-					});
-				}
-				return false;
-			});
+			<include file="Public:batch_delete" />
 		})
 	</script>
 </block>

@@ -1,0 +1,67 @@
+<extend name="Public/bg_theme"/>
+
+<block name="content">
+	<div class="location">
+		<i>当前位置：</i>
+		<a href="javascript:;" class="nav_a">系统管理 - </a>
+		<a href="{:U('')}" class="nav_a">网站设置</a>
+	</div>
+	<div class="tab-wrap">
+		<ul class="tab-nav nav">
+			<volist name="Think.config.CONFIG_GROUP_LIST" id="group">
+
+				<li <eq name="Think.get.id" value="$key">class="current"</eq>><a href="{:U('?id='.$key)}">{$group}配置</a></li>
+
+			</volist>
+		</ul>
+		<div class="tab-content">
+			<form action="{:U('save')}" method="post" class="form-horizontal manage_table">
+				<volist name="list" id="config">
+					<div class="form-item">
+						<label class="item-label">{$config.title}<span class="check-tips">（{$config.remark}）</span> </label>
+						<div class="controls">
+							<switch name="config.type">
+								<case value="0">
+									<input type="text" class="input_style input_focus content_text" name="config[{$config.name}]" value="{$config.value}">
+								</case>
+								<case value="1">
+									<input type="text" class="input_style input_focus content_text" name="config[{$config.name}]" value="{$config.value}">
+								</case>
+								<case value="2">
+									<label class="textarea input-large">
+										<textarea name="config[{$config.name}]" class="input_focus content_text">{$config.value}</textarea>
+									</label>
+								</case>
+								<case value="3">
+									<label class="textarea input-large">
+										<textarea name="config[{$config.name}]" class="input_focus content_text">{$config.value}</textarea>
+									</label>
+								</case>
+								<case value="4">
+									<select name="config[{$config.name}]">
+										<volist name=":parse_config_attr($config['extra'])" id="vo">
+											<option value="{$key}" <eq name="config.value" value="$key">selected</eq>>{$vo}</option>
+										</volist>
+									</select>
+								</case>
+							</switch>
+
+						</div>
+					</div>
+				</volist>
+				<div class="formsave mt15">
+					<empty name="list"><button type="submit" disabled class="find_btn disabled">确 定</button><else/><button type="submit" class="find_btn">确 定</button></empty>
+
+					<button class="find_btn" onclick="javascript:history.back(-1);return false;">返 回</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</block>
+
+<block name="foot_js">
+	$(function(){
+		//左侧导航子页面高亮选中
+		highlight_sidebar('{:U('group')}');
+	});
+</block>

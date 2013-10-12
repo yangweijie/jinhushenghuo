@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>css组件 - 渴切</title>
+<meta name="keywords" content="渴切,中文css框架,css框架,开源css框架,css框架下载"/>
+<meta name="description" content="渴切是一个开源中文 (X)HTML/CSS 框架 ,它的目的是减少你的css开发时间。它提供一个可靠的css基础去创建你的项目,能够用于网站的快速设计,通过重设和重建浏览器标准，可以让每个网站防 止枯燥的跨浏览器兼容性测试。"/>
+<meta name="author" content="keqie,keqie@keqie.com">
+<link rel="stylesheet" href="../assets/css/cutter.css">
+<link rel="stylesheet" href="../assets/css/docs.css">
+<!--[if ie 6]>
+<link rel="stylesheet" href="../assets/css/ie6.css">
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="../assets/js/html5.js"></script>
+<![endif]-->
+<script src="../assets/js/jquery-1.3.2.min.js"></script> 
+<script src="../assets/js/cutter.js"></script> 
+<script src="../assets/js/addon.js"></script> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+
+
+
+<div class="topbar">
+	<div class="wrapper">
+    	<div class="logo">
+        	<a href="./">渴切开源</a>
+        </div>
+        <div class="collapse">菜单</div>
+    	<div class="module">
+        	<a href="index.html">概述</a>
+        	<a href="grid.html">框架</a>
+        	<a href="base.html">基础css</a>
+        	<a href="widget.html" class="selected">组件</a>
+        	<a href="javascript.html">javascript插件</a>
+        </div>
+        <div class="sub">
+        	<a href="http://download.keqie.com">前往官网</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="heading">
+  <div class="wrapper">
+  	<h1>组件</h1>
+    <h2>定义了一些常用的组件以及样式，能够快速构建页头，导航，选项卡，页脚，子菜单，分页等</h2>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+	<h1 class="phead">页头<small>一个网页的头部</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	   <pre>&lt;header&gt;<br>&lt;h1&gt;这是一个页头&lt;/h1&gt;<br>&lt;h2&gt;这是一个页面的描述&lt;br/&gt;
+&lt;small&gt;这是一个页面的具体描述&lt;/small&gt;
+&lt;/h2&gt;<br>&lt;/header&gt;</pre>
+         </div>
+<div class="eight">
+        	
+            <header>
+            <h1>这是一个页头</h1>
+            <h2>这是一个页面的描述<br/><small>这是一个页面的具体描述</small></h2>
+            
+        </header>
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+<div class="wrapper">
+	<h1 class="phead">头部告示<small>黄色区域引人注目</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	   <pre>&lt;div class=&quot;spring&quot;&gt;这是一段警告 
+&lt;del&gt;&amp;times;&lt;/del&gt;<br>&lt;/div&gt;</pre>
+         </div>
+<div class="eight">
+        	
+             <!--演示开始-->
+             <div class="spring">
+              这是一段警告
+            
+            <del>&times;</del>
+            </div>
+             <!--演示结束-->
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+
+<div class="wrapper">
+	<h1 class="phead">头部导航<small>头部导航</small></h1>
+    
+	<div class="pbody">
+   		<!--演示开始-->
+        <div class="topbar">
+            <div class="">
+                <div class="logo">
+                    <a href="./"><font class="danley">keqie</font> 渴切</a>
+                </div>
+        		<div class="collapse">菜单</div>
+                <div class="module">
+                    <a href="index.html">概述</a>
+                    <a href="grid.html">框架</a>
+                    <a href="base.html">基础css</a>
+                    <a href="widget.html" class="selected">组件</a>
+                    <a href="javascript.html">javascript</a>
+                </div>
+                <div class="sub">
+                    <a href="index.html">例子</a>
+                    <a href="http://mobile.keqie.com">移动版</a>
+                </div>
+            </div>
+        </div>
+        <!--演示结束-->
+        
+        <h2>无色 添加<code>class="topbar unstyled"</code>调用</h2>
+   		<!--演示开始-->
+        <div class="topbar unstyled">
+            <div class="">
+                <div class="logo">
+                    <a href="./"><font class="danley">keqie</font> 渴切</a>
+                </div>
+        		<div class="collapse">菜单</div>
+                <div class="module">
+                    <a href="index.html">概述</a>
+                    <a href="grid.html">框架</a>
+                    <a href="base.html">基础css</a>
+                    <a href="widget.html" class="selected">组件</a>
+                    <a href="javascript.html">javascript</a>
+                </div>
+                <form class="search">
+                	<input name="" type="text" value="" placeholder="请输入关键字" class="text">
+                    <input name="" type="button" class="button" value="搜索">
+                </form>
+                <div class="sub">
+                    <a href="http://mobile.keqie.com">移动版</a>
+                </div>
+            </div>
+        </div>
+        <!--演示结束-->
+  	</div>
+    
+    <h1 class="phead">带搜索栏<small></small></h1>
+    
+	<div class="pbody">
+   		<!--演示开始-->
+        <div class="topbar">
+            <div class="">
+                <div class="logo">
+                    <a href="./"><font class="danley">keqie</font> 渴切</a>
+                </div>
+        		<div class="collapse">菜单</div>
+                <div class="module">
+                    <a href="index.html">概述</a>
+                    <a href="grid.html">框架</a>
+                    <a href="base.html">基础css</a>
+                    <a href="widget.html" class="selected">组件</a>
+                    <a href="javascript.html">javascript</a>
+                </div>
+                <form class="search">
+                	<input name="" type="text" value="" placeholder="请输入关键字" class="text">
+                    <input name="" type="button" class="button" value="搜索">
+                </form>
+                <div class="sub">
+                    <a href="http://mobile.keqie.com">移动版</a>
+                </div>
+            </div>
+        </div>
+        <!--演示结束-->
+  	</div>
+    
+    <div class="phead">代码片段</div>
+    <pre>&lt;div class=&quot;topbar&quot;&gt;<br>	&lt;div class=&quot;wrapper&quot;&gt;<br>    	&lt;div class=&quot;logo&quot;&gt;<br>        	&lt;a href=&quot;./&quot;&gt;&lt;font class=&quot;danley&quot;&gt;keqie&lt;/font&gt; 渴切&lt;/a&gt;<br>        &lt;/div&gt;<br>    	&lt;div class=&quot;module&quot;&gt;<br>        	&lt;a href=&quot;index.html&quot;&gt;概述&lt;/a&gt;<br>        	&lt;a href=&quot;grid.html&quot;&gt;框架&lt;/a&gt;<br>        	&lt;a href=&quot;base.html&quot;&gt;基础css&lt;/a&gt;<br>        	&lt;a href=&quot;widget.html&quot; class=&quot;selected&quot;&gt;组件&lt;/a&gt;<br>        	&lt;a href=&quot;javascript.html&quot;&gt;javascript插件&lt;/a&gt;<br>        &lt;/div&gt;<br>        &lt;div class=&quot;sub&quot;&gt;<br>        	&lt;a href=&quot;index.html&quot;&gt;例子&lt;/a&gt;<br>        	&lt;a href=&quot;http://mobile.keqie.com&quot;&gt;移动版&lt;/a&gt;<br>        &lt;/div&gt;<br>    &lt;/div&gt;<br>&lt;/div&gt;</pre>
+</div>
+
+<div class="wrapper">
+	<h1 class="phead">选项卡<small>带js的选项卡效果</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	   基于jquery制作的选项卡效果，在前端制作的二次开发中经常用到，最简洁，最有效，最通用的代码及演示。
+         </div>
+<div class="eight">
+        	
+      <div class="phead">演示</div>
+            
+            
+            <!--选项卡开始-->
+      <div class="taber">
+           		<div class="head">
+               	  <a href="#" lang="t1" class="selected">典故</a>
+               	  <a href="#" lang="t2">关于</a>
+               	  <a href="#" lang="t3">其他</a>
+               	  <a href="#" lang="t4">其他</a>
+                </div>
+<div class="body" id="t1">
+                	渴切犹急切。 何其芳《画梦录·炉边夜话》：“但这里的人从没有一个见过海的，辽远使我更加渴切了。这里的渴切是比渴望还要渴望的心情，渴切是一种需求，是一种梦想，是激励我们实现目标的动力。
+                </div>
+                <div class="body" id="t2" style="display:none;">
+                	渴切是一个开源中文 (X)HTML/CSS 框架 ,它的目的是减少你的css开发时间。它提供一个可靠的css基础去创建你的项目,能够用于网站的快速设计,通过重设和重建浏览器标准，可以让每个网站防 止枯燥的跨浏览器兼容性测试。你可以将他理解成一套模板，里面包含了大多数站点中所需要的那些css类。他很小，只有四个文件而已。总共不到6KB。
+        </div>
+                <div class="body" id="t3" style="display:none;">
+                	更多相关资讯
+        </div>
+                <div class="body" id="t4" style="display:none;">
+                	更多相关资讯
+        </div>
+           </div>
+           <!--选项卡结束-->
+           
+           <div class="phead">代码片段</div>
+           <pre>&lt;div class=&quot;taber&quot;&gt;<br>           		&lt;div class=&quot;head&quot;&gt;<br>               	  &lt;a href=&quot;#&quot; lang=&quot;t1&quot; class=&quot;selected&quot;&gt;典故&lt;/a&gt;<br>               	  &lt;a href=&quot;#&quot; lang=&quot;t2&quot;&gt;关于&lt;/a&gt;<br>               	  &lt;a href=&quot;#&quot; lang=&quot;t3&quot;&gt;其他&lt;/a&gt;<br>               	  &lt;a href=&quot;#&quot; lang=&quot;t4&quot;&gt;其他&lt;/a&gt;<br>                &lt;/div&gt;<br>&lt;div class=&quot;body&quot; id=&quot;t1&quot;&gt;<br>                	渴切犹急切。 何其芳《画梦录·炉边夜话》：“但这里的人从没有一个见过海的，辽远使我更加渴切了。这里的渴切是比渴望还要渴望的心情，渴切是一种需求，是一种梦想，是激励我们实现目标的动力。<br>                &lt;/div&gt;<br>                &lt;div class=&quot;body&quot; id=&quot;t2&quot; style=&quot;display:none;&quot;&gt;<br>                	渴切是一个开源中文 (X)HTML/CSS 框架 ,它的目的是减少你的css开发时间。它提供一个可靠的css基础去创建你的项目,能够用于网站的快速设计,通过重设和重建浏览器标准，可以让每个网站防 止枯燥的跨浏览器兼容性测试。你可以将他理解成一套模板，里面包含了大多数站点中所需要的那些css类。他很小，只有四个文件而已。总共不到6KB。<br>        &lt;/div&gt;<br>                &lt;div class=&quot;body&quot; id=&quot;t3&quot; style=&quot;display:none;&quot;&gt;<br>                	更多相关资讯<br>        &lt;/div&gt;<br>                &lt;div class=&quot;body&quot; id=&quot;t4&quot; style=&quot;display:none;&quot;&gt;<br>                	更多相关资讯<br>        &lt;/div&gt;<br>           &lt;/div&gt;</pre>
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+<div class="wrapper">
+	<h1 class="phead">侧边栏<small>侧边栏菜单，常用于子菜单的展示</small></h1>
+<div class="row">
+    	<div class="four">
+            <pre>&lt;ul class=&quot;sidebar&quot;&gt;<br>&lt;li class=&quot;selected&quot;&gt;
+&lt;a href=&quot;#&quot;&gt;栏目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;菜单&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;菜单&lt;/a&gt;&lt;/li&gt;<br>&lt;/ul&gt;
+            </pre>
+    </div>	
+    	<div class="eight">
+        	<ul class="sidebar">
+            	<li class="selected"><a href="#">栏目</a></li>
+            	<li><a href="#">菜单</a></li>
+            	<li><a href="#">菜单</a></li>
+            </ul>
+
+        </div>	
+  	</div>
+</div>
+
+
+<div class="wrapper">
+	<h1 class="phead">面包屑<small>开源中文css框架</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	  <pre>&lt;div class=&quot;current&quot;&gt;
+&lt;a href=&quot;#&quot;&gt;首页&lt;/a&gt;&amp;gt; 
+&lt;a href=&quot;#&quot;&gt;概述&lt;/a&gt;&amp;gt;
+&lt;span&gt;组件&lt;/span&gt;
+&lt;/div&gt;</pre>
+       </div>
+    	<div class="eight">
+        	
+            <div class="current">
+            	<a href="#">首页</a>
+          &gt; <a href="#">概述</a> &gt; 组件</div>
+        	
+            <h2>无样式 引用<code>class="current unstyled"</code></h2>
+          <div class="current unstyled">
+            	<a href="#">首页</a>
+          &gt; <a href="#">概述</a> &gt; 组件</div>
+          
+          
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+<div class="wrapper">
+	<h1 class="phead">分页<small>通用而简洁的分页样式</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	  <pre>&lt;div class=&quot;pager&quot;&gt;
+&lt;a href=&quot;#&quot;&gt;首页&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;上一页&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;99&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;下一页&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;尾页&lt;/a&gt;
+&lt;/div&gt;</pre>
+       </div>
+    	<div class="eight">
+        	
+          <div class="pager">
+            	<a href="#">首页</a>
+            	<a href="#">上一页</a>
+            	<a href="#">1</a>
+            	<a href="#">2</a>
+            	<a href="#" class="selected">3</a>
+            	<a href="#">4</a>
+            	<a href="#">5</a>
+            	<a href="#">...</a>
+            	<a href="#">99</a>
+            	<a href="#">下一页</a>
+            	<a href="#">尾页</a>
+          </div>
+        
+          <h2>无样式分页 引用样式<code>class="pager unstyled"</code></h2>
+          <div class="pager unstyled">
+            	<a href="#">首页</a>
+            	<a href="#">上一页</a>
+            	<a href="#">1</a>
+            	<a href="#">2</a>
+            	<a href="#" class="selected">3</a>
+            	<a href="#">4</a>
+            	<a href="#">5</a>
+            	<a href="#">...</a>
+            	<a href="#">99</a>
+            	<a href="#">下一页</a>
+            	<a href="#">尾页</a>
+          </div>
+          
+          
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+<div class="wrapper">
+	<h1 class="phead">tag标签<small>以及其他注释用途</small></h1>
+    
+	<div class="row">
+   	  <div class="twelve">
+        	
+          <table width="200" border="0" class="bordered">
+  <tr>
+    <td><span class="label">默认</span></td>
+    <td><code>&lt;span class=&quot;label&quot;&gt;默认&lt;/span&gt;</code></td>
+  </tr>
+  <tr>
+    <td><span class="label success">成功</span></td>
+    <td><code>&lt;span class=&quot;label success&quot;&gt;成功&lt;/span&gt;</code></td>
+  </tr>
+  <tr>
+    <td><span class="label warning">默认</span></td>
+    <td><code>&lt;span class=&quot;label warning&quot;&gt;警告&lt;/span&gt;</code></td>
+  </tr>
+  <tr>
+    <td><span class="label error">默认</span></td>
+    <td><code>&lt;span class=&quot;label error&quot;&gt;错误&lt;/span&gt;</code></td>
+  </tr>
+</table>
+
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+<div class="wrapper">
+	<h1 class="phead">页尾<small>一个网页的底部</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	  <pre>&lt;div class=&quot;footer&quot;&gt;
+...
+&lt;/div&gt;</pre>
+       </div>
+    	<div class="eight">
+        	
+            <div class="footer">Powered by <font class="danley"><a href="http://www.keqie.com">Keqie</a></font> V1.0
+
+              <br>
+            &copy; 2001-2012 <font class="danley"><a href="http://www.keqie.com">Keqie</a></font> Inc.            </div>
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+<div class="wrapper">
+	<h1 class="phead">heading<small>跟页头有所区别，可以做头部BANNER来用</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	  <pre>&lt;div class=&quot;heading&quot;&gt;
+&lt;h1&gt;这是一个heading&lt;/h1&gt;
+&lt;h2&gt;这是一个heading的描述&lt;/h2&gt;
+&lt;/div&gt;</pre>
+       </div>
+    	<div class="eight">
+        	
+          <div class="heading">
+            	<h1>这是一个heading</h1>
+            	<h2>这是一个heading的描述</h2>
+          </div>
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+<div class="wrapper">
+	<h1 class="phead">提示信息<small>不同的提示信息是不同的颜色，容易理解</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	  <pre>&lt;div class=&quot;current&quot;&gt;
+&lt;a href=&quot;#&quot;&gt;首页&lt;/a&gt;&amp;gt; 
+&lt;a href=&quot;#&quot;&gt;概述&lt;/a&gt;&amp;gt;
+&lt;span&gt;组件&lt;/span&gt;
+&lt;/div&gt;</pre>
+       </div>
+    	<div class="eight">
+        	
+            
+            <h2>默认提示风格</h2>
+            <div class="alert">
+            	<strong>提示信息！</strong>这是一段普通的提示信息描述
+            </div>
+            
+            <h2>正确提示风格</h2>
+            <div class="alert success">
+            	<strong>恭喜你！</strong>经过你的不懈努力，你升级啦！
+            </div>
+            
+            <h2>错误提示风格</h2>
+            <div class="alert error">
+            	<strong>权限不足！</strong>您没有权限访问本页，请问管理员索要权限。
+            </div>
+   	  </div>	
+    	
+  	</div>
+</div>
+
+<div class="wrapper">
+	<h1 class="phead">进度条<small>纯css实现</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	  <pre>&lt;div class=&quot;progress&quot;&gt;<br>&lt;div class=&quot;bar&quot; style=&quot;width:50%;&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;</pre>
+       </div>
+    	<div class="eight">
+        	
+            
+            <h2>默认提示风格</h2>
+            <div class="progress">
+            	<div class="bar" style="width:50%;"></div>
+            </div>
+            <h2>格子状</h2>
+            <div class="progress striped">
+            	<div class="bar" style="width:50%;"></div>
+            </div>
+            <h2>动态滚动</h2>
+            <div class="progress striped active">
+            	<div class="bar" style="width:50%;"></div>
+            </div>
+            <h2>成功</h2>
+            <div class="progress success">
+            	<div class="bar" style="width:50%;"></div>
+            </div>
+            <h2>警告</h2>
+            <div class="progress warning">
+            	<div class="bar" style="width:50%;"></div>
+            </div>
+            <h2>危险</h2>
+            <div class="progress danger">
+            	<div class="bar" style="width:50%;"></div>
+            </div>
+   	  </div>	
+    	
+  	</div>
+</div>
+
+
+
+
+
+<div class="wrapper">
+	<h1 class="phead">消息墙<small>突出展示一些信息</small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	  <pre>&lt;div class=&quot;well&quot;&gt;<br>...
+&lt;/div&gt;</pre>
+       </div>
+    	<div class="eight">
+        	<div class="well">
+            	消息墙，可以突出展示一些信息
+            </div>
+        </div>    
+    	
+  	</div>
+</div>
+
+
+
+
+<div class="wrapper">
+	<h1 class="phead">时间轴<small>时间线（timeline）是将一系列按照时间发生的事件拖放在一条直线上，来使用户直观的看出事件的先后关系。时间线一词还用来形容按照时间排列的年度报表或者其他文档。 </small></h1>
+    
+	<div class="row">
+    	<div class="four">
+    	  <pre>&lt;ul class=&quot;timeline&quot;&gt;<br>            	&lt;li class=&quot;event&quot;&gt;<br>                	&lt;label&gt;&lt;/label&gt;<br>                	&lt;div class=&quot;thumb&quot; style=&quot;background-image:url(imgs/darthvader.jpg);&quot;&gt;<br>                    	&lt;span&gt;19 Nov&lt;/span&gt;<br>                    &lt;/div&gt;<br>                    &lt;div class=&quot;inner&quot;&gt;<br>                    	&lt;h3&gt;I find your lack of faith disturbing&lt;/h3&gt;<br>                        &lt;p&gt;Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. The plans you refer to will soon be back in our hands. A tremor in the Force. The last time I felt it was in the presence of my old master. Escape is not his plan. I must face him. Alone.&lt;/p&gt;<br>                    &lt;/div&gt;<br>                &lt;/li&gt;<br>            	&lt;li class=&quot;event&quot;&gt;<br>                	&lt;label&gt;&lt;/label&gt;<br>                	&lt;div class=&quot;thumb&quot; style=&quot;background-image:url(imgs/darthvader.jpg);&quot;&gt;<br>                    	&lt;span&gt;19 Nov&lt;/span&gt;<br>                    &lt;/div&gt;<br>                    &lt;div class=&quot;inner&quot;&gt;<br>                    	&lt;h3&gt;I find your lack of faith disturbing&lt;/h3&gt;<br>                        &lt;p&gt;Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. The plans you refer to will soon be back in our hands. A tremor in the Force. The last time I felt it was in the presence of my old master. Escape is not his plan. I must face him. Alone.&lt;/p&gt;<br>                    &lt;/div&gt;<br>                &lt;/li&gt;<br>            &lt;/ul&gt;</pre>
+     </div>
+    	<div class="eight">
+        	<ul class="timeline">
+            	<li class="event">
+                	<label></label>
+                	<div class="thumb" style="background-image:url(imgs/darthvader.jpg);">
+                    	<span>19 Nov</span>
+                    </div>
+                    <div class="inner">
+                    	<h3>I find your lack of faith disturbing</h3>
+                        <p>Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. The plans you refer to will soon be back in our hands. A tremor in the Force. The last time I felt it was in the presence of my old master. Escape is not his plan. I must face him. Alone.</p>
+                    </div>
+                </li>
+            	<li class="event">
+                	<label></label>
+                	<div class="thumb" style="background-image:url(imgs/darthvader.jpg);">
+                    	<span>19 Nov</span>
+                    </div>
+                    <div class="inner">
+                    	<h3>I find your lack of faith disturbing</h3>
+                        <p>Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. The plans you refer to will soon be back in our hands. A tremor in the Force. The last time I felt it was in the presence of my old master. Escape is not his plan. I must face him. Alone.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>    
+    	
+  	</div>
+</div>
+
+<div class="wrapper footer">
+	<p>&copy; CopyRight 2002-2013, <a href="http://www.keqie.com">渴切- 开源中文css框架</a>, Inc.All Rights Reserved.<br/>
+	代码基于<a href="http://www.apache.org/licenses/LICENSE-2.0" rel="nofollow" target="_blank">Apache License v2.0</a>, 文档基于创作共享的 <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/" rel="nofollow" target="_blank">署名-非商业使用-相同方 式分享 2.5</a> 协议发布</p>
+</div>
+
+</body>
+</html>
+

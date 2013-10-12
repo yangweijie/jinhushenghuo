@@ -1,0 +1,80 @@
+/*!
+ * 渴切(Cutter)开源中文css框架 v2.0.2
+ *
+ * Copyright 2012 keqie.com, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+ 
+ /*台式电脑*/
+@media (min-width: 768px) and (max-width: 959px) {
+	.topbar .inner{
+		width:auto; padding:0 20px;
+	}
+	header, footer, .wrapper{
+		width:auto; margin:20px;
+	}
+	.one,
+	.two,
+	.three,
+	.four,
+	.five,
+	.six,
+	.seven,
+	.eight,
+	.nine,
+	.ten,
+	.eleven,
+	.twelve {
+		width:100%;
+	}
+}
+
+/*平板电脑*/
+@media (min-width: 320px) and (max-width: 768px) {
+	.topbar .inner{
+		width:auto; padding:0 20px;
+	}
+	header, footer, .wrapper{
+		width:auto; margin:20px;
+	}
+	.one,
+	.two,
+	.three,
+	.four,
+	.five,
+	.six,
+	.seven,
+	.eight,
+	.nine,
+	.ten,
+	.eleven,
+	.twelve {
+		width:100%;
+	}
+}
+
+/*手机*/
+@media (min-width: 0px) and (max-width: 320px) { 
+	.topbar .inner{
+		width:auto; padding:0 20px;
+	}
+	header, footer, .wrapper{
+		width:auto; margin:20px;
+	}
+	.one,
+	.two,
+	.three,
+	.four,
+	.five,
+	.six,
+	.seven,
+	.eight,
+	.nine,
+	.ten,
+	.eleven,
+	.twelve {
+		width:100%;
+	}
+}

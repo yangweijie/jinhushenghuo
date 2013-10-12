@@ -1,101 +1,59 @@
 <!doctype html>
-<html lang="zh">
+<html>
 <head>
 	<meta charset="UTF-8">
-	<block name="title"><title>首页_上海欧易生物医学科技有限公司:</title></block>
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/oebiotech.css">
-	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/oebiotech.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<block name="title"><title>金湖生活网</title></block>
+	<link rel="stylesheet" href="__PUBLIC__/assets/css/cutter.css">
+	<link rel="stylesheet" href="__PUBLIC__/assets/css/addons.css">
 	<block name="css"></block>
+	<!--[if lt IE 9]>
+	<script src="../assets/js/html5.js"></script>
+	<![endif]-->
+	<script src="__PUBLIC__/assets/js/jquery.js"></script>
+	<script src="__PUBLIC__/assets/js/cutter.js"></script>
+
 	<block name="js"></block>
 </head>
 <body>
-	<!-- 头部 -->
-	<div class="header wrapper">
-		<div class="header-bar cf">
-			<div class="fl">
-				<a href="http://oebiotech.com/" rel="sidebar" onclick="window.external.addFavorite(this.href,this.title);return false;"><i class="icon icon-favorites"></i>收藏本站</a>
-				<a href="http://i.dxy.cn/oebiotech" target="_blank"><i class="icon icon-blog"></i>欧易丁香园</a>
-				<a href="http://weibo.com/oebiotech" target="_blank"><i class="icon icon-sina"></i>欧易微博</a>
-			</div>
-			<div class="tel">
-				<i class="icon icon-user"></i>
-				<span>服务热线：</span>
-				<span class="tel-num">4006-4008-26</span>
+	<!-- header -->
+	<div class="header">
+		<div class="heading"></div>
+		<div class="nav">
+			<div class="topbar">
+				<div class="wrapper">
+					<div class="logo">
+						<a href="./">渴切开源</a>
+					</div>
+					<div class="collapse">菜单</div>
+					<div class="module">
+						<a href="index.html">概述</a>
+						<a href="grid.html">框架</a>
+						<a href="base.html">基础css</a>
+						<a class="selected" href="widget.html">组件</a>
+						<a href="javascript.html">javascript插件</a>
+					</div>
+					<div class="sub">
+						<a href="http://download.keqie.com">前往官网</a>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div class="cf">
-			<a class="logo" href="{:U('/')}">欧易生物</a>
+	</div>
+	<!-- header /-->
+	<div class="w960 contaner">
+	<div class="wrapper">
+		<block name="content"></block>
 
-			<!-- 导航搜索 -->
-			<form action="{:U('search')}" method="get" class="header-search cf">
-				<input type="text" name="keyword" class="sch-text">
-				<input type="submit" class="sch-btn" value="">
-				<i class="icon icon-search-arrow"></i>
-				<ul class="submenu nav-list hidden">
-					<li><a href="javascript:;">123</a></li>
-					<li><a href="javascript:;">456adfadf</a></li>
-					<li><a href="javascript:;">789</a></li>
-					<li><a href="javascript:;">012</a></li>
-				</ul>
-			</form>
-		</div>
 	</div>
 
-	<!-- 主导航 -->
-	<div class="main-nav">
-		<div class="wrapper cf">
-			<i class="nav-solid-left"></i>
-			<i class="nav-solid-right"></i>
-			<ul class="nav">
-				<li><a class="item" href="{:U('/')}">首页</a></li>
-				<php> $nav_count = count($nav); </php>
-				<volist name="nav" id="nav_vo">
-					<li>
-						<a <eq name="key" value="$nav_count-1"> style="padding-right:23px" </eq>class="item" href="{:url('detail',array(id=>$nav_vo['id']),$nav_vo['link'])}">{$nav_vo.c_name}</a>
-						<ul class="subnav nav-list hidden">
-							<volist name="nav_vo._child" id="vo">
-								<li><a href="{:url('detail',array(id=>$vo['id']),$vo['link'])}">{$vo.c_name}</a></li>
-							</volist>
-						</ul>
-					</li>
-				</volist>
-			</ul>
-		</div>
-	</div>
-
-	<!-- 中间主要内容 -->
-	<block name="content"></block>
-
-	<!-- 底部 -->
 	<div class="footer">
-		<div class="help-link">
-			<a href="javascript:;">首页</a>
-			<span>|</span>
-			<a href="javascript:;">欧易简介</a>
-			<span>|</span>
-			<a href="javascript:;">合作方</a>
-			<span>|</span>
-			<a href="javascript:;">网站地图</a>
-			<span>|</span>
-			<a href="javascript:;">加入欧易</a>
-			<span>|</span>
-			<a href="javascript:;">你的建议</a>
-			<span>|</span>
-			<a href="javascript:;">友情链接</a>
-		</div>
-		<div class="copyright">
-			<p>地址：上海浦东张江高科技园区祖冲之路1505弄138号6层&nbsp;电话：021-20283908，38760130&nbsp;免费热线电话：4006-400826&nbsp;传真：021-20283910</p>
-			<p>Copyright&copy;2010-2012&nbsp;版权所有&nbsp;上海欧易生物医学科技有限公司</p>
-			<p>经营许可证编号&nbsp;沪ICP备-050455</p>
-		</div>
-		<!-- 返回顶部 -->
-		<div class="wrapper">
-			<a href="javascript:;" id="gototop">返回顶部</a>
-		</div>
+		Powered by <font class="danley"><a href="http://www.keqie.com">Keqie</a></font> V1.0
+		<br>
+		&copy; 2001-2012 <font class="danley"><a href="http://www.keqie.com">Keqie</a></font> Inc.
 	</div>
-	<!-- /底部 -->
 	<block name="foot_js"></block>
 </body>
 </html>

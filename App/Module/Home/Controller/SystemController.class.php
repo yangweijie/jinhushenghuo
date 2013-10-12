@@ -21,6 +21,13 @@ class SystemController extends CommonController {
         if (is_login()) {
             $this->redirect('System/index');
         } else {
+            /* 读取数据库中的配置 */
+            $config = S('DB_CONFIG_DATA');
+            if(!$config){
+                $config = D('Config')->lists();
+                S('DB_CONFIG_DATA',$config);
+            }
+            C($config); //添加配置
             $this->display();
         }
     }
@@ -59,6 +66,7 @@ class SystemController extends CommonController {
                 //设置登录SESSION
                 session(C('USER_AUTH_KEY'), $user);
                 session(C('USER_AUTH_SIGN_KEY'), user_auth_sign($user));
+
                 $this->success('登录成功','',array('data'=>U('System/index')));
             }else{
                 $this->error('密码错误');

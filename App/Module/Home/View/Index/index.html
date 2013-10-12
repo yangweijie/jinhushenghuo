@@ -1,92 +1,51 @@
 <extend name="Public:fe_theme" />
 <block name="content">
-	<!-- banner -->
-	<div class="slide-container wrapper">
-		<!-- 大图区域 -->
-		<div class="slide-pic-wrap">
-			<ul class="spw-box">
-				<volist name="banner" id="vo">
+		<div class="row">
+			<div class="twelve">
+				<p>asdas</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="four purchase">
+				<p>第一列</p>
+			</div>
+			<div class="four purchase">
+				<p>第二列</p>
+			</div>
+			<div class="four purchase">
+				<p>第三列</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve">
+				<p>这是广告位</p>
+			</div>
+			<div class="twelve">
+				<p>这是广告位</p>
+			</div>
+			<div class="twelve">
+				<p>这是广告位</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve">
+				<ul class="unstyled">
 					<li>
-						<a href="{$vo.link|default='javascript:;'}" target="_blank"><img src="__ROOT__{$vo.src}"></a>
+						<a href="detail.html">这是文章标题</a>
 					</li>
-				</volist>
-			</ul>
-		</div>
-		<!-- 数字列表 -->
-		<ul class="slide-numlist nav">
-			<volist name="banner" id="vo">
-				<li><a href="javascript:;">{$i}</a></li>
-			</volist>
-		</ul>
-	</div>
-
-	<!-- 主要内容区 -->
-	<div class="wrapper cf">
-		<!-- 欧易动态 -->
-		<div class="columns style-1 fl">
-			<div class="hd cf">
-				<div class="columns-title"><i class="index-dyn"></i><em>欧易动态</em></div>
-				<a class="more" href="{:U('detail?id='.$dynamic_navid)}"><i class="icon icon-more"></i>更多</a>
-			</div>
-			<div class="bd">
-				<ul class="list">
-					<volist name="dynamic" id="vo">
-						<li>
-							<a href="{:U('detail?id='.$vo['nav_id'].'&article_id='.$vo['id'])}">{$vo.title}</a>
-						</li>
-					</volist>
+					<li>
+						<a href="detail.html">这是文章标题</a>
+					</li>
+					<li>
+						<a href="detail.html">这是文章标题</a>
+					</li>
+					<li>
+						<a href="detail.html">这是文章标题</a>
+					</li>
+					<li>
+						<a href="detail.html">这是文章标题</a>
+					</li>
 				</ul>
-			</div>
-		</div>
-
-		<!-- 行业咨询 -->
-		<div class="columns style-1 fl">
-			<div class="hd cf">
-				<div class="columns-title"><i class=" index-ask"></i><em>行业咨询</em></div>
-				<a class="more" href="{:U('detail?id='.$dynamic_navid2)}"><i class="icon icon-more"></i>更多</a>
-			</div>
-			<div class="bd">
-				<ul class="list">
-					<volist name="dynamic2" id="vo">
-						<li>
-							<a href="{:U('detail?id='.$vo['nav_id'].'&article_id='.$vo['id'])}">{$vo.title}</a>
-						</li>
-					</volist>
-				</ul>
-			</div>
-		</div>
-
-		<!-- 右边 -->
-		<div class="index-side">
-			<!-- 资料下载 -->
-			<div class="columns style-2">
-				<div class="hd cf">
-					<div class="columns-title"><i class="index-down"></i><em>资料下载</em></div>
-					<a class="more" href="{:U('down?id=0')}"><i class="icon icon-more"></i>更多</a>
-				</div>
-				<div class="bd">
-					<ul class="list">
-						<volist name="down" id="vo">
-							<li>
-								<a href="{:U('down?id='.$vo['id'])}">
-									{$vo.o_name}
-								</a>
-							</li>
-						</volist>
-					</ul>
-				</div>
-			</div>
-
-			<!-- 联系我们 -->
-			<div class="columns style-2">
-				<div class="hd cf">
-					<div class="columns-title"><i class="index-contact"></i><em>联系我们</em></div>
-					<a class="more" href="javascript:;"><i class="icon icon-more"></i>更多</a>
-				</div>
-				<div class="bd ">
-					<a href="javascript:;" style="margin-right:34px;"><i class="icon-kefu"></i>在线客服</a>
-					<a href="javascript:;"><i class="icon-qq"></i>给我留言</a>
-				</div>
 			</div>
 		</div>
 	</div>

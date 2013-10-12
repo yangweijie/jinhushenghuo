@@ -1,0 +1,31 @@
+/*!
+ * 渴切(Cutter)开源中文css框架 v2.0.2
+ *
+ * Copyright 2012 keqie.com, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 5．12地震给四川人民带来了巨大灾难，5月19日到5月21日为全国哀悼日，有很多网站界面今天都变成了黑白色，从而纪念那些在地震中死去的逝者。对于普通的站长来说，对于灾难并不能多做些什么，但可以做到将自己的网站也变成黑白色，从而缅怀那些地震逝者。 
+ */
+
+
+*{
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+     -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+
+
+/*网站局部变灰，只需引用 class="grayer"即可*/
+.grayer{
+	filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+     -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}

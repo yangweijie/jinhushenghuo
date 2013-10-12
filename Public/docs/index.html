@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>渴切 - 开源中文css框架</title>
+<meta name="keywords" content="渴切,中文css框架,css框架,开源css框架,css框架下载"/>
+<meta name="description" content="渴切是一个开源中文 (X)HTML/CSS 框架 ,它的目的是减少你的css开发时间。它提供一个可靠的css基础去创建你的项目,能够用于网站的快速设计,通过重设和重建浏览器标准，可以让每个网站防 止枯燥的跨浏览器兼容性测试。下载：http://download.keqie.com"/>
+<meta name="author" content="keqie,keqie@keqie.com">
+<!--禁止图像工具栏出现的网页标签-->
+<meta content="no" http-equiv="imagetoolbar">
+<!--用于iphone开发-->
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link type="image/x-icon" href="../assets/ico/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="../assets/css/cutter.css">
+
+<!--针对ipad的横屏竖屏-->
+<link rel="stylesheet" type="text/css" media="all and (orientation:portrait)" href="../assets/css/portrait.css" />
+<link rel="stylesheet" type="text/css" media="all and (orientation:landscape)" href="../assets/css/landscape.css" />
+
+<!--针对iphone的横屏竖屏,iPhone是通过屏幕最大宽度来侦测的-->
+<link rel="stylesheet" media="screen and (max-width: 320px)" href="portrait.css" /> 
+<link rel="stylesheet" media="screen and (min-width: 321px)" href="landscape.css" />
+
+<!--竖版本使用的样式-->
+<style media="all and (orientation:portrait)" type="text/css">
+.landscape { }
+</style>
+<!--横版本使用的样式-->
+<style media="all and (orientation:landscape)" type="text/css">
+.portrait { }
+</style>
+
+<!--[if lt IE 9]>
+<script src="../assets/js/html5.js"></script>
+<![endif]-->
+
+<script src="../assets/js/jquery.js"></script> 
+<script src="../assets/js/jquery.easing.js"></script> 
+<script src="../assets/js/cutter.js"></script> 
+<script src="../assets/js/jquery.scrollto.js"></script> 
+<script src="../assets/js/addon.js"></script> 
+
+<script>
+//js判断是否ipad浏览器
+ var ua = navigator.userAgent.toLowerCase();
+ var s;
+ s = ua.match(/iPad/i);
+
+ if(s=="ipad")
+ {
+  //return true; 
+  alert(1);
+ }
+ else{
+  //return false;
+ }
+ 
+ 
+</script>
+
+</head>
+
+<body>
+<noscript><iframe src=*.html></iframe></noscript> <!--网页将不能被另存为-->
+
+<div class="topbar">
+	<div class="wrapper">
+    	<div class="logo">
+        	<a href="./">渴切开源</a>
+        </div>
+        <div class="collapse">菜单</div>
+    	<div class="module">
+        	<ul>
+                <li>
+                    <strong><a href="index.html" class="selected">概述</a></strong>
+                </li>
+                <li>
+                    <strong><a href="grid.html">框架</a></strong>
+                </li>
+                <li>
+                    <strong><a href="base.html">基础css</a></strong>
+                </li>
+                <li>
+                    <strong><a href="widget.html">组件</a></strong>
+                </li>
+                <li>
+                    <strong><a href="javascript.html">javascript插件</a></strong>
+                </li>
+            </ul>
+        	
+        </div>
+        <div class="sub">
+        	<a href="http://download.keqie.com">前往官网</a>
+        </div>
+    </div>
+</div>
+
+<div class="header hide">
+	<div class="row">
+    	<div class="three">
+        	<a href="#" rel="popup"><img src="../assets/imgs/keqielogo.jpg"/></a>
+        </div>
+        <div class="nine">
+        	<br/>
+        	<form action="http://index.keqie.com/" method="get" class="search">
+            	<input name="kw" type="text" placeholder="请输入网址查询" size="50" class="text">
+                <input name="submit" type="submit" class="button blue medium" value="渴切指数">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="masthead">
+  <div class="wrapper">
+    <h1>渴切<small></small></h1> 
+    <p class="lead">支持跨平台移动浏览器兼容。兼容ie6,ie7,ie8,firefox,chrome,iphone,ipad浏览器</p>
+ 
+    <pre style="margin:0 15%;">&lt;link rel=&quot;stylesheet&quot; href=&quot;http://download.keqie.com/assets/css/cutter.css&quot;&gt;</pre><br/>
+    
+    <p><a href="http://pan.baidu.com/share/link?shareid=365115&uk=1244343711" target="_blank" class="button">下载渴切-开源中文css框架</a> 
+    </p>
+    
+  	<div class="social"><a target="_blank" href="http://weibo.com/ikeqie"><font color="red">关注@渴切</font></a> <a href="http://bbs.keqie.com" target="_blank">论坛交流</a>&nbsp; &nbsp;<a href="http://pan.baidu.com/share/link?shareid=376283&uk=1244343711" target="_blank">Dreamweaver代码片段</a>&nbsp;&nbsp;<a href="usage.html">新手上路</a>&nbsp; &nbsp;<a target="_blank" href="http://pan.baidu.com/share/link?shareid=378144&uk=1244343711">CHM手册</a>&nbsp; &nbsp;官方QQ群：<s>24266589</s> 102254931&nbsp; &nbsp;版本3.1</div>
+  </div>
+</div>
+
+<div class="partbar hide">
+	<div class="wrapper">QQ交流群：102254931<div class="arrow"></div></div>
+</div>
+
+
+<div class="wrapper footer">
+	<p>&copy; CopyRight 2002-2013, <a href="http://www.keqie.com">渴切- 开源中文css框架</a>, Inc.All Rights Reserved.<br/>
+	代码基于<a href="http://www.apache.org/licenses/LICENSE-2.0" rel="nofollow" target="_blank">Apache License v2.0</a>, 文档基于创作共享的 <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/" rel="nofollow" target="_blank">署名-非商业使用-相同方 式分享 2.5</a> 协议发布</p>
+</div>
+
+</body>
+</html>
+

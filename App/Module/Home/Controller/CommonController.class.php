@@ -70,9 +70,9 @@ class CommonController extends Action {
         $php_url = dirname($_SERVER['PHP_SELF']) . '/';
 
         //根目录路径，可以指定绝对路径，比如 /var/www/attached/
-        $root_path = './Attach/';
+        $root_path = './Uploads/';
         //根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
-        $root_url = '/Attach/';
+        $root_url = '/Uploads/';
         //图片扩展名
         $ext_arr = array('gif', 'jpg', 'jpeg', 'png', 'bmp');
 
@@ -201,9 +201,9 @@ class CommonController extends Action {
         $php_url = dirname($_SERVER['PHP_SELF']) . '/';
 
         //文件保存目录路径
-        $save_path = './Attach/article/';
+        $save_path = './Uploads/article/';
         //文件保存目录URL
-        $save_url = './Attach/article/';
+        $save_url = './Uploads/article/';
         //定义允许上传的文件扩展名
         $ext_arr = array(
             'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),

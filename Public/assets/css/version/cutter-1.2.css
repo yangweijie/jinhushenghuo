@@ -1,0 +1,922 @@
+/*!
+ * 渴切(Cutter)开源中文css框架 v2.0.2
+ *
+ * Copyright 2012 keqie.com, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+ 
+ @charset "gb2312";
+/*@charset "gb2312";*/
+
+@import url("gird.css");
+@import url("button.css");
+@import url("form.css");
+@import url("font.css");
+@import url("icon.css");
+
+/*递归样式写法*/
+html > body > table >  tr [id="total"] > td  > ul > li { color:#ff0000;}
+ 
+
+/**
+ +------------------------------------------------------------------------------
+ * 网站样式重写
+ +------------------------------------------------------------------------------
+ * @comefrom  互联网
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+ body{ color:#333; font-family:Verdana, Arial, Helvetica, sans-serif; line-height:22px; font-size:13px; background:#fff; /*解决电脑设置保护色，网页空白处默认淡绿色问题*/}
+ * {}
+a{outline:none; text-decoration:none; color:#333;} a:hover{ text-decoration:underline; color:#000;}
+html{zoom:1;}html *{outline:0;zoom:1;} html button::-moz-focus-inner{border-color:transparent!important;} 
+body{overflow-x: hidden;} 
+body,div,dl,dt,dd,ul,ol,li/*,h1,h2,h3,h4,h5,h6*/,pre,code,form,input,textarea,/*p,*/blockquote,th,td{margin:0;padding:0;} table{/*border-collapse:collapse;border-spacing:0;*/}
+p{
+	margin:0 0 10px 0;
+}
+ /*fieldset,*/a img{border:0;} address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;} 
+ li{/*list-style:none;*/ list-style-position:inside;}
+  caption,th{text-align:left;} h1,h2,h3,h4,h5,h6{/*font-size:100%;*/font-weight:normal;} 
+q:before,q:after{content:'';}
+hr{
+	border:none; clear:both; height:0; background:none; margin:0; padding:0; border-bottom:#eee solid 1px; 
+}
+
+blockquote {
+    border-left: 5px solid #EEEEEE;
+    margin: 10px;
+    padding: 10px;
+}
+
+ul.unstyled, ol.unstyled{
+	list-style:none;
+}
+ul.circle{
+	list-style-type:circle;
+}
+ul.square{
+	list-style-type:square;
+}
+ul.cjk{
+	list-style-type:cjk-ideographic;
+}
+
+
+/*首字母*/
+.firstletter:first-letter{ font-size:200%;}
+/**
+ +------------------------------------------------------------------------------
+ * Public Class
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; }.clearfix {display:block;}.clear{ clear:both;}/* 清除浮动*/
+.colwrapper { overflow:hidden; zoom:1 /*for ie*/; margin:5px auto; }/* 高度自适应 */ 
+.strong{ font-weight: bold;} .left{ float: left;} .right{ float: right;} .center{ margin:0 auto; text-align:center;}
+.show{ display:block; visibility:visible;}.hide{ display: none; visibility:hidden;}
+.block{ display:block;} .inline{ display:inline;}
+.transparent{filter:alpha(opacity=50); -moz-opacity:0.5;/** Firefox 3.5即将原生支持opacity属性，所以本条属性只在Firefox3以下版本有效 ***/ -khtml-opacity: 0.5; opacity: 0.5; } .break{ word-wrap:break-word;overflow:hidden; /*word-break:break-all;*/}
+
+.canvas {
+    position: relative;
+}
+.relative {
+    position: relative;
+}
+code, pre {
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
+    font-family: Menlo,Monaco,"Courier New",monospace;
+    font-size: 12px;
+    padding: 0 3px 2px;
+	
+}
+pre{
+	font-family:consolas,"Courier New",courier,monospace; /*color:#0088CC;*/
+	 background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    border-radius: 4px 4px 4px 4px;
+    display: block;
+    font-size: 12.025px;
+    line-height: 18px;
+    margin: 0 0 9px;
+    padding: 8.5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+	
+	/*box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset;*/
+}
+pre ol{
+	margin: 0 0 0 14px;
+}
+pre.unstyled{
+	background:none; color:#333; border:none;
+}
+
+/*插入flash默认灰色*/
+object{ background:gray; display:block;}
+
+.pink{ color:#ff00ff;} .blue{ color:#0000ff;} .deepblue{ color:#000099;} .gray{ color:#999999;} .red{ color:#ff0000;} .black{ color:#000;} .white{ color:white;} .green{color:green;}
+code {
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    color: #0088CC;
+    padding: 2px 4px;
+}
+
+.underline{ text-decoration:underline;}
+.dashedline{ border-bottom:dashed 1px #666;}
+
+ol.dashedline{
+	border:none;
+}
+ol.dashedline li{
+	border-bottom:dashed 1px #666; padding:5px;
+}
+
+.tal{ text-align:left} .tar{ text-align:right;}
+
+/* 固定不动 */
+.fixed{
+	position:fixed; clip:rect(0 100% 100% 0); _position:absolute;
+	
+	/* 底部 */
+	bottom:0px; left:0px; _top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+	
+	/* 左侧 */
+	/*left:0px;*/
+	/*_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);*/
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+}
+.fixed.scrolltotop, .fixed.livechat{
+	 bottom:20px; right:20px; left:auto; background:#85c2f2; width:50px; height:50px; text-align:center; line-height:50px; font-size:50px; color:#fff; display:block; _display:none;
+}
+a:hover.fixed.scrolltotop, a:hover.fixed.livechat{
+	background:#2d96e9; text-decoration:none;
+}
+.fixed.livechat{
+	bottom:75px;
+}
+
+*html{ background-image:url(about:blank); background-attachment:fixed; /* 解决固定层在IE6下闪的问题 */}
+
+
+/* png透明 */
+.pngfix{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='images/x.png');}
+
+/* 渐变 */
+.gradient{filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#dedede);
+    background: -moz-linear-gradient(top, #ffffff, #dedede);}
+	
+.radius
+{	
+-webkit-border-radius: 4px;   /*只支持webkit内核的浏览器*/
+border-radius: 4px;  /*只支持IE内核的浏览器（IE>=7)*/
+-moz-border-radius : 4px; /*只支持Mozilla内核的浏览器*/
+border:#ddd solid 1px;
+padding:4px;
+}
+
+.highlighted {
+    background: none repeat scroll 0 0 #00ADEE;
+    color: #FFFFFF;
+    padding: 0 5px;
+}
+
+/*超出省略号显示*/
+.ellipsis{
+	white-space:nowrap;/*设置不折行*/
+	text-overflow:ellipsis;/*这就是省略号喽*/
+	-o-text-overflow:ellipsis;/*兼容opera*/
+	width:80px;
+	overflow:hidden;
+}
+/*文字闪动*/
+.blink{
+	text-decoration:blink;
+}
+
+
+/* 解决ie下连接加粗的鼠标样式问题*/
+a strong{ cursor:pointer;}
+
+/**
+ +------------------------------------------------------------------------------
+ * FCK 兼容解决方案
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+em{ font-style:italic !important;} strike{ text-decoration:line-through !important;} strong{ font-weight:bold !important;} u{ text-decoration:underline !important;}
+
+/**
+ +------------------------------------------------------------------------------
+ * 表单样式
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+/* input[type=text]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus {  border-color:#666;} */
+input{/*behavior:url(input.htc);*/ border:1px #ccc solid; margin:1px; padding:1px;}/*Only for ie 5.0+*/
+/*label input{width:14px;height:14px;border:0;}*/ /*For input type is Radio*/
+input:hover{}/*For orther browsers*/
+
+
+/**
+ +------------------------------------------------------------------------------
+ * 网站整体颜色总汇
+ +------------------------------------------------------------------------------
+ * @codex  颜色:使用颜色的名称或者16进制代码,如 
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.ff8600,ff86aa a{ color:#ff8600;}
+
+/**
+ +------------------------------------------------------------------------------
+ * 网站整字体大小
+ +------------------------------------------------------------------------------
+ * @codex   字体大小,直接使用"font+字体大小"作为名称,如
+ * @package  ORG
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.font14px{ font-size:14px;}
+.font9pt{ font-size:9pt;}
+
+
+/**
+ +------------------------------------------------------------------------------
+ * 网站整布局命名规范
+ +------------------------------------------------------------------------------
+ * @codex   id和class命名采用该版块的英文单词或组合命名 如:newRelease
+ * @package  ORG
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+ 
+/*外部链接*/
+ a[rel=external]{
+ 	background:url(../imgs/external.png) no-repeat right center; padding:0 12px 0 0;
+ }
+ 
+/*页面外围控制整体布局宽度*/
+
+
+/* 网站外围阴影 */
+.shardow{}
+
+/* 容器盒子 */
+.container, .wrapper{ width:960px ; height: ; margin:0 auto; padding: ; background:url(../imgs/grid.png) repeat; clear:both; height:auto; overflow:hidden; 
+	
+	/*解决ie8居中的问题*/
+	/*position:relative;
+	left:50%;
+	margin-left:-480px;*/
+}
+
+h1{
+	*margin:25px 0; font-size:26px;
+}
+h2{
+	font-size:20px;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small{
+	color:#999; font-size:80%;
+}
+
+.topbar{
+	background: none repeat scroll 0 0 #DBEFF9;
+    height: 40px;
+    line-height: 40px;
+	text-align:center;
+}
+.topbar.fixed{
+	position:fixed;
+	top:0;
+	width:100%;
+	_position:absolute;
+	_top: expression(documentElement.scrollTop + "px");
+}
+.topbar .inner{
+	margin: 0 auto;
+    width: 960px;
+}
+.topbar .inner .logo{
+	float:left; display:inline; margin:0 20px 0 0; font-size:20px;
+}
+.topbar .module a, .topbar .sub a{
+	background: none repeat scroll 0 0 #EDF7FC;
+    border-radius: 3px 3px 0 0;
+    color: #000000;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 2px;
+    padding: 0 8px;
+    position: relative;
+    white-space: nowrap;
+}
+.topbar .module a:hover, .topbar .sub a:hover{
+	background:#F1F9FD; text-decoration:none;
+}
+.topbar .module a.selected, .topbar .sub a.selected{
+	background:#fff;
+}
+.topbar .module{
+	float: left;
+    height: 32px;
+    padding-top: 8px;
+}
+.topbar .sub{
+	float: right;
+    height: 32px;
+    margin-right: -5px;
+    margin-top: 8px;
+}
+.topbar .sub a{
+	background:none;
+	font-size: 12px;
+    padding: 0 3px;
+}
+.topbar .sub a:hover{
+	background:#F1F9FD;
+}
+
+/*2012.2.8 新增二级菜单*/
+.topbar .module ul{
+	display:inline;
+}
+.topbar .module li{
+	display:inline; float:left; position:relative; z-index:99;
+}
+.topbar .module li strong{
+	display:inline; float:left; font-weight:normal !important;
+}
+.topbar .module .droper{
+	display:none; position:absolute; left:0; top:30px; width:160px; background:#fff; box-shadow:#ccc 0px 2px 7px; padding:10px 0 0 0;
+}
+.topbar .module .droper a{
+	background:none; border-bottom:#eee solid 1px; display:block; float:none; font-size:13px; text-align:left;
+	
+	white-space:nowrap;/*设置不折行*/
+	text-overflow:ellipsis;/*这就是省略号喽*/
+	-o-text-overflow:ellipsis;/*兼容opera*/
+	width:130px;
+	overflow:hidden;
+}
+.topbar .module .selected .droper{
+	display:block;
+}
+.topbar .module .selected strong a, .topbar .sub .selected strong a{
+	background:#fff;
+}
+
+
+header , .header{
+	margin: 0px auto 0px auto;
+    width: 960px;
+	height:auto;
+	overflow:hidden;
+	clear:both;
+}
+header h1, .header h1{
+	font-size: 54px;
+	line-height:60px;
+}
+header h2, .header h2{
+	font-size:20px;
+	line-height:30px;
+}
+.header .search{
+	margin:10px 0 0 0;
+}
+.header .search .text{
+	padding:9px;
+}
+.header .search .button{
+	padding:9px;
+}
+
+.navbar{
+	margin: 0px auto 0 auto;
+	background-color: #2C2C2C;
+    background-image: -moz-linear-gradient(center top , #fff, #EDF7FC);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.075);
+	border-radius: 4px 4px 4px 4px;
+}
+.navbar a{
+	margin:0 10px 0 10px;
+	padding:5px 5px;
+	display:inline-block;
+	border-radius: 3px 3px 3px 3px;
+	color:#666;
+}
+.navbar a.selected{
+	
+	background:#EDF7FC;
+}
+.navbar a:hover{
+	text-decoration:none;
+	background:#F1F9FD;
+}
+.navbar .divider{
+	margin:5px 2px;
+	border-left:#5cadd8 solid 1px;
+	border-right:#fff solid 1px;
+}
+
+
+.phead{
+	border-bottom: 1px solid #EEEEEE;
+    margin: 18px 0;
+    padding-bottom: 17px;
+	font-size:30px;
+	font-weight:bold;
+	padding-top:20px;
+	clear:both;
+}
+.phead small{
+	font-size: 18px;
+	color:#999;
+	margin-left:20px;
+	font-weight:normal;
+}
+.pbody{
+	
+}
+.pfoot{
+	
+}
+
+
+footer, .footer{
+	width:960px; margin:0 auto; clear:both; margin-top:20px; display:block;/*新增的html5标签需要加入display:block,才能居中哦*/
+}
+footer a, .footer a{
+	text-decoration:underline;
+}
+footer .left, .footer .left{
+	width:60%;
+}
+footer .right, .footer .right{
+	width:40%; text-align:right;
+}
+
+table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100%;
+	font-size:13px;
+}
+table td.selected, table th.selected{
+	background:#DBEFF9;
+}
+.table {
+    margin-bottom: 20px;
+    width: 100%;
+}
+.table th, .table td {
+    border-top: 1px solid #DDDDDD;
+    line-height: 20px;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+.table th {
+    font-weight: bold;
+}
+.table thead th, .table thead td {
+    vertical-align: bottom; background:#DBEFF9;
+}
+table.bordered {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-collapse: separate;
+    border-color: #DDDDDD #DDDDDD #DDDDDD -moz-use-text-color;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: none solid solid none;
+    border-width: 1px 1px 1px 0;
+}
+table.bordered th, table.bordered td {
+    border-left: 1px solid #DDDDDD;
+	border-top: 1px solid #DDDDDD;
+}
+
+.bordered{
+	border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+	padding:5px;
+}
+.bordered:hover{
+	border-color:#bbb;
+}
+
+.heading{
+	padding:30px 20px 20px 30px; background:#EDF7FC; line-height:1; text-align:center; margin-bottom:30px;
+	
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c1e2ff));
+	background: -moz-linear-gradient(top,  #fff,  #c1e2ff);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#c1e2ff');
+	/*border-bottom:#DBEFF9 solid 2px;*/
+	
+	-moz-box-shadow:2px -5px 5px #a5c3dd inset;             /* For Firefox3.6+ */
+	-webkit-box-shadow:2px -5px 5px #a5c3dd inset;          /* For Chrome5+, Safari5+ */
+	box-shadow:2px -5px 6px #a5c3dd inset;                  /* For Latest Opera */
+}
+.heading .wrapper{
+	left:auto; margin-left:auto;
+}
+.heading h1{
+	font-size:60px; margin-bottom:20px; font-family:"微软雅黑", "黑体", Arial;
+}
+.heading h2{
+	line-height:120%;
+}
+
+.heading.spiliter{
+	-moz-box-shadow:none; 
+	-webkit-box-shadow:none; 
+	box-shadow:none;
+	background: #e0f0ff;
+	filter:  none;
+	padding:0;
+}
+.heading.spiliter .wrapper{
+	padding:0 0 20px 0;
+}
+.heading.spiliter sup,
+.heading.spiliter sub{
+	background: -webkit-gradient(linear, left top, left bottom, from(#c1e2ff), to(#e0f0ff));
+	background: -moz-linear-gradient(top,  #c1e2ff,  #e0f0ff);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c1e2ff', endColorstr='#e0f0ff');
+	display:block;
+	height:10px;
+}
+.heading.spiliter sub{
+	background: -webkit-gradient(linear, left top, left bottom, from(#e0f0ff), to(#c1e2ff));
+	background: -moz-linear-gradient(top,  #e0f0ff,  #c1e2ff);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0f0ff', endColorstr='#c1e2ff');
+}
+
+.marketing{}
+.marketing h1{
+	text-align:center; font-size:40px; line-height:40px; font-family:"微软雅黑", "黑体", Arial;
+}
+.marketing h1 small{
+	display:block; font-size:20px;
+}
+
+
+.sidebar{
+    border-radius: 4px 4px 4px 4px; list-style:none; padding-bottom:1px;}
+.sidebar li a{
+	border: 1px solid #E5E5E5;
+    display: block;
+    margin: 0 0 -1px;
+    padding: 8px 14px;
+}
+.sidebar li.selected a{
+	cursor:default; color:#999;
+}
+.sidebar li.selected a:hover{
+	text-decoration:none;
+}
+
+
+.pager{
+	padding-top:2px;
+}
+.pager a{
+	padding:4px 10px;
+	border: 1px solid #D6E5F2;
+	background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ecf3f9));
+	background: -moz-linear-gradient(top,  #fff,  #ecf3f9);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ecf3f9');
+}
+.pager a:hover{
+	background: none repeat scroll 0 0 #0099FF;
+    border-color: #0099FF;
+    color: #FFFFFF;
+}
+.pager a.selected{
+	background:none;
+	border:none;
+}
+
+.alert{
+	background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #3A87AD;
+	padding:10px;
+}
+.alert.error{
+	background-color: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+}
+.alert.success{
+	background-color: #DFF0D8;
+    border-color: #D6E9C6;
+    color: #468847;
+}
+
+.footbar{
+	background:#FAFAFA; margin:50px 0 0 0; border-bottom:#E9E9E9 solid 1px; border-top:#EAEAEA solid 1px;
+}
+.footbar .head{
+	background:#F2F2F2; padding:5px; text-align:center;
+}
+.footbar .body{
+	padding:20px 0; 
+}
+.footbar .item{
+	width:180px; display: inline; float: left; margin-left: 20px; padding:0 0 0 20px;
+}
+/*写法不兼容ie6,ie7*/
+.footbar .item + .item {
+    border-left: 1px solid #DDDDDD;
+}
+/*hack*/
+.footbar .item li{
+	*margin-left:-15px;
+}
+
+
+/*美版风格*/
+.usa ul, .usa ol{
+	font-size:11px;
+}
+
+.hero{
+	background:#eee; padding:30px 60px; border-radius: 6px 6px 6px 6px;
+}
+.hero h1{
+	font-size: 54px;
+}
+
+
+/*幻灯片*/
+.slider{
+	background:#44BDFD; clear:both;
+	background: #EDF7FC;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#EDF7FC));
+	background: -moz-linear-gradient(top,  #fff,  #EDF7FC);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#EDF7FC');
+	border-bottom:#DBEFF9 solid 2px;
+	position:relative;
+}
+.slider .prev, .slider .next{
+	font-size:100px; position:absolute; left:0; top:100px; /*background: #DBEFF9;*/ padding:30px 10px; color:#DBEFF9; cursor:pointer; text-shadow:#c0e2f4 1px 1px; font-family:sans-serif;
+}
+.slider .next{
+	right:0; left:auto;
+}
+.slider .inner{
+	width:5000px;
+}
+.slider .inner .item{
+	padding:20px 0 20px 0; width:960px; float:left; display:inline; text-shadow:#fff 1px 1px; text-align:center; line-height:1;
+}
+.slider h1{
+	font-size:60px; margin-bottom:20px;
+}
+.slider h2{
+	line-height:120%;
+}
+.slider .inner .item .button{
+	padding:15px 20px;
+}
+
+
+.naver li{
+	float:left; display:inline; margin:0 0 0 30px; position:relative;
+}
+.naver li h5{
+	font-size:14px; float:left; display:inline; height:40px; line-height:40px; margin:0;
+}
+.naver .droper:before{
+	border-bottom: 7px solid #44BDFD;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    display: inline-block;
+    left: 9px;
+    position: absolute;
+    top: -7px;
+}
+.naver .droper{
+	position:absolute;
+	left:0;
+	top:40px;
+	border-top:#44BDFD solid 3px;
+	border-bottom:#44BDFD solid 2px;
+	background:#fff;
+	padding:0 10px;
+	width:100px;
+	display:none;
+}
+.naver .droper a{
+	line-height:30px; display:block; text-align:center; border-bottom:#eee solid 1px;
+}
+
+.rotate:hover{
+	transform: rotate(360deg);
+	transition: all 1s ease-out 0s;
+}
+
+
+/*选项卡*/
+.taber{
+}
+.taber .head{
+	border-left: 1px solid #E5E5E5; height:30px;
+}
+.taber .head a{
+	border: 1px solid #E5E5E5; float:left; display:inline; padding:0px 20px; border-left:none; height:30px; line-height:30px;
+}
+.taber .head a.selected{
+	border-bottom:none;
+}
+.taber .body{
+	clear:both; padding:10px;
+}
+
+#tooltip{
+	border:2px solid #1C7ECF; padding:10px; background:#fff; position:relative; z-index:1001;
+}
+#tooltip .arrow{
+	width:0; height:0;
+	border-top:0px;
+	border-bottom:9px solid #1c7ecf;
+	border-right:9px solid #fff;
+	border-left:9px solid #fff;	
+	position:absolute;
+	top:-10px; *top:-30px; left:10px;
+}
+
+.spring{
+	background:#FFF8E2; color: #B56015;  position: relative; z-index: 99; padding:10px; box-shadow: 0 -2px 3px rgba(201, 175, 111, 0.2) inset; font-family:proxima-nova,"Helvetica Neue",'微软雅黑',Arial,sans-serif,"Lucida Grande","Lucida Sans Unicode",Helvetica,Verdana,'Tahoma'; font-size:12px; line-height:18px;
+}
+.spring del{
+	color: #737373; text-decoration: underline;position: absolute; right: 50px; top: 16px;
+}
+
+/*仿苹果时间样式*/
+.label.time{
+	background:#666; color:#fff; padding:2px 5px; margin:0 2px 0 2px; position:relative;
+}
+.label.time:before{
+	position:absolute; width:100%; height:1px; background:#fff; content:""; left:0; top:50%;
+}
+
+/*弹窗*/
+.popup{
+	width:600px; height:auto; overflow:hidden; position:fixed; left:50%; margin-left:-300px; top:50%; margin-top:-200px; border:#ccc solid 1px; background:#fff; box-shadow:#333 0px 3px 7px; z-index:999; display:none; 
+	-webkit-border-radius: 4px;   /*只支持webkit内核的浏览器*/
+	border-radius: 4px;  /*只支持IE内核的浏览器（IE>=7)*/
+	-moz-border-radius : 4px; /*只支持Mozilla内核的浏览器*/
+	
+}
+.popup del{
+	display:block; position:absolute; right:0; top:10px; width:50px; height:50px; font-family:Arial, Helvetica, sans-serif; text-decoration:none; font-size:30px;
+}
+.popup .head{
+	border-bottom:#eee solid 1px; padding:20px; font-size:20px;
+}
+.popup .body{
+	padding:20px;
+}
+.popup .foot{
+	background:#f5f5f5; padding:10px; border-top: 1px solid #DDDDDD; box-shadow: 0 1px 0 #FFFFFF inset; text-align:right;
+	-webkit-border-radius: 0 0 4px 4px;   /*只支持webkit内核的浏览器*/
+	border-radius: 0 0 4px 4px;  /*只支持IE内核的浏览器（IE>=7)*/
+	-moz-border-radius : 0 0 4px 4px; /*只支持Mozilla内核的浏览器*/
+}
+
+
+	
+/*广告*/
+.banner{}
+
+/*页面主体*/
+.pagebody{ width:100%; height:auto; overflow:hidden; border:#CCC solid 1px; clear:both;}
+
+.leftpage, .mainpage, .rightpage{ float:left; margin-right:10px; background:#fff; }
+
+/*页面左侧*/
+.leftpage{}
+
+/*页面右侧*/
+.mainpage{}
+
+/* 页面右侧 */
+.rightpage{}
+
+/* 列表模型 */
+.list{}
+
+/*侧栏*/
+.sidebar {}
+
+/*栏目*/
+.column{}
+
+/*登录条*/
+.loginbar{}
+
+/*热点*/
+.hot{}
+
+/*新闻*/
+.news{}
+
+/*下载*/
+.download{}
+
+/*子导航*/
+.subnav{}
+
+/*菜单*/
+.menu{}
+
+/*子菜单*/
+.submenu{}
+
+/*搜索*/
+.search{}
+
+/*友情链接*/
+.friendlink{}
+.friendlink a{
+	width:100px; float:left; display:inline;
+}
+
+/*版权*/
+.copyright{}
+
+/*滚动*/
+.scroll{}
+
+/*内容*/
+.content{}
+
+/*标签页*/
+.tab{}
+
+/*文章列表*/
+.list{}
+
+/*提示信息*/
+.msg{}
+
+/*小技巧*/
+.tips{}
+
+/*栏目标题*/
+.title{}
+
+/*加入*/
+.joinus{}
+
+/*指南*/
+.guild{}
+
+/*服务*/
+.service{}
+
+/*注册*/
+.regsiter{}
+
+/*状态*/
+.status{}
+
+/*投票*/
+.vote{}
+
+/*合作伙伴*/
+.partner{}
+
+/* 分页 */
+.page{ text-align:center; background:#eee;}
+	.page a{ border:#ccc solid 1px; margin-left:3px; padding:4px 4px;}
+	.page a:hover{ text-decoration:none;}
+
+/*页脚*/
+.footer{ }
