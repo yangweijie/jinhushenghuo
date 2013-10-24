@@ -35,16 +35,26 @@ class VideoController extends CommonController {
 	public function coverUpload(){
 		parent::ajaxUpload(
 			array(
-				'savePath'  => './Uploads/video/',
+				'savePath'  => './Uploads/cover/',
 				'saveRule'  => 'uniqid',
 				'allowExts' => array('jpg','jpeg','png','gif')
 			)
 		);
 	}
 
-	// public function after_upload($controller, $uploaded, $result){
-	// 	session('uploaded', $uploaded);
-	// }
+	public function after_upload($controller, $uploaded, &$result){
+		switch ($controller) {
+			case 'coverUpload':
+				$result['content'] = str_replace('./', '/', $uploaded['file']);
+				break;
+			case 'attachUpload':
+				$result['content'] = str_replace('./', '/', $uploaded['file']);
+				break;
+			default:
+				# code...
+				break;
+		}
+	}
 
 	// public function insert(){
 	// 	$file = session('uploaded');

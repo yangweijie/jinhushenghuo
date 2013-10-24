@@ -8,7 +8,6 @@
 			$('#file_upload').uploadify({
 				'auto' : true,
 				'buttonText' : '[button_text]',
-				// 'width' : '100%',
 				'height':29,
 				'multi' : false,
 				'fileTypeDesc' : '[file_type_desc]',
@@ -17,57 +16,22 @@
 					'session_id' : '{:session_id()}',
 					'ajax':1
 				},
-				// 'queueID' : "fsUploadProgress",
 				'removeCompleted' : true,
 				'removeTimeout' : 0,
 				'fileSizeLimit' : '1024MB',
 				'swf'      : '__PUBLIC__/js/uploadify/uploadify.swf',
 				'uploader' : '{:U("[target]")}',
-				// 'itemTemplate' : $("#tmpl").html(),
 				'onInit'   : function(instance) {
 					$('#SWFUpload_0').width('100%');
-					$('#queue').before('<span id="uploadify_file_path"></span>');
+					$('#file_upload').before('<span id="uploadify_file_path"></span>');
 				},
 				'onFallback' : function() {
 					$.thinkbox.error("未检测到兼容版本的Flash");
 				},
 
 				'onSelect' : function(file){
-					$('#uploadify_file_path').val(file.name);
-					var formData = $('#file_upload').uploadify('settings','formData');
-					var send_name = $('#send_name').val();
-					if(send_name != '' && send_name != undefined){
-						formData.send_name = send_name;
-						$('#file_upload').uploadify('settings','formData',formData);
-					}
+					$('#uploadify_file_path').text(file.name);
 				},
-				// 'onDialogClose' : function(queueData){
-				// 	if(queueData.filesSelected !=0){
-				// 		$up_box = $('#window_2_inner');
-				// 		upload_box = $.thinkbox($up_box,{
-				// 			'width':   600,
-				// 			'title':   "文件上传处理",
-				// 			'drag':   true,
-				// 			'clone':   false,
-				// 			afterShow: function(){
-				// 				// $up_box.remove();
-				// 			}
-				// 			,afterHide:function(){
-				// 				location.reload(true)
-				// 			}
-				// 		});
-				// 	}
-				// },
-				// 'onClearQueue' : function(queueItemCount) {
-				// 	upload_box.hide();
-				// },
-				// 'onCancel' : function(file){
-				// 	if($('#fsUploadProgress dd').length == 0)
-				// 		upload_box.hide();
-				// },
-				// 'onUploadProgress' : function(file,data, response){
-				// 	$('#'+file.id).find('li.file-rate').html("正在上传");
-				// },
 				'onUploadSuccess' : function(file, data, response) {
 					<include file="Public:[after_upload]" />
 				},

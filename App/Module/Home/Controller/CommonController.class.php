@@ -563,7 +563,7 @@ class CommonController extends Action {
             if(method_exists($this, 'after_upload')){
                 $uploaded = $uploaded[0];
                 $uploaded['file'] = $uploaded['savepath'].$uploaded['savename'];
-                $this->after_upload(CONTROLLER_NAME,$uploaded,$result);
+                $this->after_upload(ACTION_NAME, $uploaded, $result);
             }
         }
         d_f('rs',$result);

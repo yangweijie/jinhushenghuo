@@ -25,48 +25,15 @@
 				// 'itemTemplate' : $("#tmpl").html(),
 				'onInit'   : function(instance) {
 					$('#SWFUpload_1').width('100%');
-					$('#file_upload_cover').before('<span name="file_path" id="uploadify_file_path2" readonly></span>');
+					$('#file_upload_cover').before('<span id="uploadify_file_path2" readonly></span>');
 				},
 				'onFallback' : function() {
 					$.thinkbox.error("未检测到兼容版本的Flash");
 				},
 
 				'onSelect' : function(file){
-					$('#uploadify_file_path2').val(file.name);
-					var formData = $('#file_upload').uploadify('settings','formData');
-					var send_name = $('#send_name').val();
-					if(send_name != '' && send_name != undefined){
-						formData.send_name = send_name;
-						$('#file_upload').uploadify('settings','formData',formData);
-					}
+					$('#uploadify_file_path2').text(file.name);
 				},
-				// 'onDialogClose' : function(queueData){
-				// 	if(queueData.filesSelected !=0){
-				// 		$up_box = $('#window_2_inner');
-				// 		upload_box = $.thinkbox($up_box,{
-				// 			'width':   600,
-				// 			'title':   "文件上传处理",
-				// 			'drag':   true,
-				// 			'clone':   false,
-				// 			afterShow: function(){
-				// 				// $up_box.remove();
-				// 			}
-				// 			,afterHide:function(){
-				// 				location.reload(true)
-				// 			}
-				// 		});
-				// 	}
-				// },
-				// 'onClearQueue' : function(queueItemCount) {
-				// 	upload_box.hide();
-				// },
-				// 'onCancel' : function(file){
-				// 	if($('#fsUploadProgress dd').length == 0)
-				// 		upload_box.hide();
-				// },
-				// 'onUploadProgress' : function(file,data, response){
-				// 	$('#'+file.id).find('li.file-rate').html("正在上传");
-				// },
 				'onUploadSuccess' : function(file, data, response) {
 					<include file="Public:[after_upload]" />
 				},

@@ -32,8 +32,9 @@
 			<tr>
 				<td>源文件(MP4视频)</td>
 				<td>
+					<div style="margin-top:10px"></div>
 					<input type="text" name="src" id="video_src" class="input_style input_focus">
-					<include file="Public:upload" button_text="上传" file_type_desc="MP4视频文件" file_type_exts="*.mp4" target="attachUpload" after_upload="video_upload"/>
+					<include file="Public:upload_video" button_text="上传" file_type_desc="MP4视频文件" file_type_exts="*.mp4" target="attachUpload" after_upload="video_upload"/>
 				</td>
 			</tr>
 			<tr>
@@ -75,8 +76,9 @@
 			<tr>
 				<td>封面</td>
 				<td>
+					<div style="margin-top:10px"></div>
 					<input type="text" name="poster" id="video_poster_src" class="input_style input_focus">
-					<include file="Public:upload_cover" button_text="上传" file_type_desc="图片文件" file_type_exts="*.jpg;*.png;*.jpeg;*.gif" target="coverUpload" after_upload="video_poster_upload"/>
+					<include file="Public:upload_cover" button_text="上传" file_type_desc="图片文件" file_type_exts="*.jpg; *.png; *.gif" target="coverUpload" after_upload="video_poster_upload"/>
 				</td>
 			</tr>
 		</table>
