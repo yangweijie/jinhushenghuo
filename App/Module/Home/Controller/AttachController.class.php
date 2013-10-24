@@ -24,7 +24,7 @@ class AttachController extends CommonController {
 	public function attachUpload(){
 		parent::ajaxUpload(
 			array(
-				'savePath'  => './Attach/normal/',
+				'savePath'  => './Uploads/normal/',
 				'saveRule'  => 'uniqid',
 				// 'allowExts' => array('xls')
 			)

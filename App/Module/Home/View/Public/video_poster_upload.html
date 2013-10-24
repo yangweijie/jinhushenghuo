@@ -1,0 +1,12 @@
+console.log(data)
+data = $.parseJSON(data);
+console.log(data)
+					if(data.status){
+						$.thinkbox.success("上传成功");
+						$table = $('#video_poster').parents('table');
+						$table.find('#video_src').val(data.content);
+					}else{
+						var msg = '<a title="' +data.error + '">上传失败<a/>';
+						console.log(data.error);
+						$.thinkbox.error(msg);
+					}

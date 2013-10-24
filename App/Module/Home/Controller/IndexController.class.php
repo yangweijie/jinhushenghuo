@@ -137,20 +137,9 @@ class IndexController extends Action {
     }
 
     //特殊分类页
-    public function special($type = 1){
-        $special_id = 29;//以后改变了请手动更改这个
-        $navModel = D('Nav');
-        $current_nav = $navModel->find(29);
-        $_GET['id'] = $special_id;
-        $this->assign('current_nav',$current_nav);//当前分类
-        $_GET['type'] = $type;
-        $path = $navModel->getPath($special_id);
-        $this->assign('path', $path); // 面包屑导航
-        $this->assign('siblings', $navModel->where("status=1 AND pid={$current_nav['pid']}")->order('`order` asc')->select());
-        //上面是和普通详情页一致的数据
-        $this->assign('type', $type);
-        $this->assign('types', D('Type')->select());
-        $this->assign('subnav', D('Special')->where("type={$type}")->order('`order` asc')->select());
+    public function video($id = 1){
+        $data = M('Video')->find($id);
+        $this->assign('data', $data);
         $this->display();
     }
 
