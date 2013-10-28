@@ -1,0 +1,11 @@
+console.log(data)
+data = $.parseJSON(data);
+console.log(data)
+					if(data.status){
+						$.thinkbox.success("上传成功");
+						$('#preview').append(data.content);
+					}else{
+						var msg = '<a title="' +data.error + '">上传失败<a/>';
+						console.log(data.error);
+						$.thinkbox.error(msg);
+					}

@@ -1,0 +1,47 @@
+	<form method="post" enctype="application/x-www-form-urlencoded" class="upload_form">
+		<div id="queue"></div>
+		<input id="file_upload_cover" name="file_upload" type="file" multiple="true" class="find_btn">
+	</form>
+	<script type="text/javascript">
+		$(function() {
+			$('#file_upload_cover').uploadify({
+				'auto' : true,
+				'buttonText' : '[button_text]',
+				// 'width' : '100%',
+				'height':29,
+				'multi' : false,
+				'fileTypeDesc' : '[file_type_desc]',
+				'fileTypeExts' : '[file_type_exts]',
+				'formData'     : {
+					'session_id' : '{:session_id()}',
+					'ajax':1
+				},
+				// 'queueID' : "fsUploadProgress",
+				'removeCompleted' : true,
+				'removeTimeout' : 0,
+				'fileSizeLimit' : '1024MB',
+				'swf'      : '__PUBLIC__/js/uploadify/uploadify.swf',
+				'uploader' : '{:U("[target]")}',
+				// 'itemTemplate' : $("#tmpl").html(),
+				'onInit'   : function(instance) {
+					$('#SWFUpload_0').width('100%');
+				},
+				'onFallback' : function() {
+					$.thinkbox.error("未检测到兼容版本的Flash");
+				},
+
+				'onSelect' : function(file){
+				},
+				'onUploadSuccess' : function(file, data, response) {
+					<include file="Public:[after_upload]" />
+				},
+				'onQueueComplete' : function(queueData){
+
+				},
+				'onUploadError' : function(file, errorCode, errorMsg, errorString){
+					var msg = '<a title="' +errorString + '">上传失败<a/>';
+					$.thinkbox.error(msg);
+				}
+			});
+		});
+	</script>

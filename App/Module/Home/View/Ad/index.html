@@ -8,13 +8,13 @@
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap-editable-1.4.5/bootstrap-editable/css/bootstrap-editable.css">
 	<div class="location">
 		<i>当前位置：</i>
-		<a href="javascript:;" class="nav_a">视频列表</a>
+		<a href="javascript:;" class="nav_a">广告列表</a>
 	</div>
 	<div class="title_form">
 		<div class="title_search">
 			<form action="{:U('')}" method="post">
 				<label for="">名称：</label>
-				<input type="text" name="name" class="title_text input_style input_focus" value="{:I('name')}">
+				<input type="text" name="title" class="title_text input_style input_focus" value="{:I('title')}">
 				<button class="find_btn" type="submit">搜索</button>
 			</form>
 		</div>
@@ -27,44 +27,34 @@
 		<table id="del_table">
 			<tr>
 				<th><input type="checkbox" name="checkAll"></th>
+				<th>id</th>
+				<th>类型</th>
+				<th>分类</th>
 				<th>名称</th>
-				<th>路径</th>
-				<th>宽度和高度</th>
-				<th>自动播放</th>
-				<th>循环</th>
-				<th>预加载</th>
-				<th>描述</th>
-				<th>封面</th>
+				<th>有效时间</th>
+				<th>排序</th>
 			</tr>
 			<volist name="list" id="vo">
 			<tr>
 				<td>
 					<input type="checkbox" name="id[]" value="{$vo.id}" id="checkEach">
 				</td>
+				<td>{$vo.id}</td>
+				<td>
+					<a href="javascript:;" class="editable status" data-name="type" data-type="select" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}" data-source="[{value: 1, text: '内容'},{value: 2, text: '顶部'},{value: 3, text: '对联'},{value: 4, text: '悬浮'}]" data-value="{$vo.type}"></a>
+				</td>
+				<td>
+					<a href="javascript:;" class="editable group" data-name="cate_id" data-type="text" data-pk="{$vo.id}" data-value="{$vo.cate_id}" data-url="{:U('ajaxUpdate')}">{$vo.cate_id}</a>
+				</td>
 				<td>
 					<a href="javascript:;" class="editable" data-name="title" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.title}</a>
 				</td>
 				<td>
-					<a href="javascript:;" class="editable group" data-name="src" data-type="text" data-pk="{$vo.id}" data-value="{$vo.src}" data-url="{:U('ajaxUpdate')}">{$vo.src}</a>
+					<a data-original-title="设置有效期开始时间" data-pk="{$vo.id}" data-viewformat="MMM D, YYYY, HH:mm" data-format="YYYY-MM-DD HH:mm" data-template="D MMM YYYY  HH:mm" data-type="combodate" href="javascript:;" class="editable editable-click editable-empty" date-name="startTime">空</a>-
+					<a data-original-title="设置有效期开始时间" data-pk="{$vo.id}" data-viewformat="MMM D, YYYY, HH:mm" data-format="YYYY-MM-DD HH:mm" data-template="D MMM YYYY  HH:mm" data-type="combodate" href="javascript:;" class="editable editable-click editable-empty" date-name="startTime">空</a>
 				</td>
 				<td>
-					<a href="javascript:;" class="editable" data-name="width" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.width}</a>,
-					<a href="javascript:;" class="editable" data-name="height" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.height}</a>
-				</td>
-				<td>
-					<a href="javascript:;" class="editable status" data-name="autoplay" data-type="select" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}" data-source="[{value: 0, text: '否'},{value: 1, text: '是'}]" data-value="{$vo.autoplay}"></a>
-				</td>
-				<td>
-					<a href="javascript:;" class="editable status" data-name="loop" data-type="select" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}" data-source="[{value: 0, text: '否'},{value: 1, text: '是'}]" data-value="{$vo.loop}"></a>
-				</td>
-				<td>
-					<a href="javascript:;" class="editable status" data-name="preload" data-type="select" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}" data-source="[{value: 0, text: '否'},{value: 1, text: '是'}]" data-value="{$vo.preload}"></a>
-				</td>
-				<td>
-					<a href="javascript:;" class="editable" data-name="desc" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.desc}</a>
-				</td>
-				<td>
-					<a href="javascript:;" class="editable" data-name="poster" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.poster}</a>
+					<a href="javascript:;" class="editable" data-name="sort" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.sort}</a>
 				</td>
 			</tr>
 			</volist>

@@ -58,6 +58,19 @@ class CommonController extends Action {
         $this->update();
     }
 
+
+    //上传文件的删除
+    public function ajaxDel(){
+        $filename = '.'.I('file');
+        trace($filename);
+        $del = unlink($filename);
+        if($del === true){
+            $this->success('删除成功');
+        }else{
+            $this->error('删除失败','', array('0'=>$_POST));
+        }
+    }
+
     public function editbleAjaxGet($model,$field){
         $list = D($model)->field($field)->select();
         exit(json_encode($list));
