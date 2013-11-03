@@ -17,7 +17,6 @@ class SystemController extends CommonController {
     }
 
     public function login() {
-        cookie('think_language_save', null);
         if (is_login()) {
             $this->redirect('System/index');
         } else {
@@ -48,7 +47,6 @@ class SystemController extends CommonController {
             $this->ajaxReturn('', '请填写登录名', 0);
         } elseif (empty($loginName)) {
             $this->ajaxReturn('', '请填写密码', 0);
-        // }
         //验证码判断
         } elseif (empty($validate) || md5(strtolower($validate)) != session('login_validate')) {
             $this->ajaxReturn('', '错误的验证码', 0);
@@ -60,8 +58,6 @@ class SystemController extends CommonController {
                     'admin_id'   => 1,
                     'admin_name' => $loginName,
                     'login_time' => NOW_TIME, //上次登录时间
-                    'admin_role' => $result['role'],
-                    'company_id' => $result['company_id']
                 );
                 //设置登录SESSION
                 session(C('USER_AUTH_KEY'), $user);

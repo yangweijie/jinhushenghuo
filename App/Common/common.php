@@ -197,6 +197,11 @@ function get_admin_name() {
 	return $user['admin_name'];
 }
 
+function get_name(){
+	$user = session(C('FRONT_USER_AUTH_KEY'));
+	return $user['name'];
+}
+
 //判断用户是否登录
 function is_login() {
 	$user = session(C('USER_AUTH_KEY'));
@@ -210,6 +215,15 @@ function is_login() {
         }
         C($config); //添加配置
 		return session(C('USER_AUTH_SIGN_KEY')) == user_auth_sign($user) ? $user['admin_id'] : 0;
+	}
+}
+
+function is_front_login(){
+	$user = session(C('FRONT_USER_AUTH_KEY'));
+	if (empty($user)) {
+		return 0;
+	} else {
+		return session(C('FRONT_USER_AUTH_SIGN_KEY')) == user_auth_sign($user) ? $user['id'] : 0;
 	}
 }
 

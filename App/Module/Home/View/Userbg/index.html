@@ -17,14 +17,19 @@
 			<tr>
 				<th><input type="checkbox" name="checkAll"></th>
 				<th>邮箱</th>
+				<th>用户名</th>
 				<th>创建时间</th>
 			</tr>
 			<volist name="list" id="vo">
 			<tr>
 				<td>
-					<input type="checkbox" name="id[]" value="{$vo.id}" id="checkEach"></td>
+					<input type="checkbox" name="id[]" value="{$vo.id}" id="checkEach">
+				</td>
 				<td>
 					<a href="javascript:;" class="editable" data-name="email" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.email}</a>
+				</td>
+				<td>
+					<a href="javascript:;" class="editable" data-name="name" data-type="text" data-pk="{$vo.id}" data-url="{:U('ajaxUpdate')}">{$vo.name}</a>
 				</td>
 				<td>
 					{$vo.time_text}

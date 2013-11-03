@@ -17,7 +17,6 @@
         <script src="__PUBLIC__/js/jQuery.textSlider.js"></script>
         <script type="text/javascript" src="__PUBLIC__/js/YlFloat.js"></script>
         <script type="text/javascript" src="__PUBLIC__/js/floatAd.js"></script>
-
         <block name="js"></block>
     </head>
     <body>
@@ -51,277 +50,287 @@
     					</div>
     					<div class="seven">
     						<div class="row h30">
-    							<div class="one"><a href="javascript:;">QQ登录</a></div>
-    							<div class="five">
-    								用户名：<input type="text" name="name"> <input type="checkbox" name="autologin"> 自动登录
-    							</div>
-    							<div class="one">
-    								<a href="javascript:;">找回密码</a></div>
-    							</div>
-    							<div class="row h30">
-    								<div class="one"><a href="javascript:;">微博登录</a></div>
-    								<div class="five">
-    									密码：<input type="password" name="name">
-    									<input type="submit" value="登录" class="button blue" name="">
-    								</div>
-    								<div class="one"><a href="javascript:;">立即注册</a></div>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    				<div class="topbar unstyled">
-    					<div class="wrapper">
-    						<div class="logo">
-    							<a href="./">首页</a>
-    						</div>
-    						<div class="collapse">菜单</div>
-    						<div class="module">
-    							<a href="index.html">网上商城</a>
-    							<a href="grid.html">每日签到</a>
-    							<a href="base.html">手机版</a>
-    						</div>
+                                <?php $user = get_name(); ?>
+                                <present name="user">
+                                    欢迎您，用户 [<a href="{:U('User/info')}">{:get_name()}</a>]
 
-    						<div class="sub">
-    							<a href="http://mobile.keqie.com">快捷导航</a>
-    						</div>
-    					</div>
-    				</div>
+                                    <else />
+                                    <form action="{:U('User/login')}" method="post">
+                                     <div class="one"><a href="javascript:;">QQ登录</a></div>
+                                     <div class="five">
+                                        用户名：<input type="text" name="name"> <input type="checkbox" name="autologin"> 自动登录
+                                    </div>
+                                    <div class="one">
+                                        <a href="javascript:;">找回密码</a></div>
+                                    </div>
+                                    <div class="row h30">
+                                        <div class="one"><a href="javascript:;">微博登录</a></div>
+                                        <div class="five">
+                                           密码：<input type="password" name="pwd">
+                                           <input type="submit" value="登录" class="button blue" name="">
+                                       </div>
+                                       <div class="one"><a href="{:U('User/register')}">立即注册</a></div>
+                                   </div>
+                               </form>
+                           </present>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="topbar unstyled">
+               <div class="wrapper">
+                  <div class="logo">
+                     <a href="./">首页</a>
+                 </div>
+                 <div class="collapse">菜单</div>
+                 <div class="module">
+                     <a href="index.html">网上商城</a>
+                     <a href="grid.html">每日签到</a>
+                     <a href="base.html">手机版</a>
+                 </div>
 
-    				<div class="topbar unstyled">
-    					<div class="wrapper row percent font14px">
-    						<div class="grid three">
-    							<div class="grid three">
-    								互动
-    							</div>
-    							<div class="grid nine">
-    								<div class="row h30">
-    									<a href="./">金湖杂谈</a>
-    									<a href="./">交友</a>
-    								</div>
-    								<div class="row h30">
-    									<a href="./">有问必答</a>
-    									<a href="./">情感</a>
-    								</div>
-    							</div>
-    						</div>
-    						<div class="grid three">
-    							<div class="grid three">
-    								生活
-    							</div>
-    							<div class="grid nine">
-    								<div class="row h30">
-    									<a href="./">房产信息</a>
-    									<a href="./">求职招聘</a>
-    								</div>
-    								<div class="row h30">
-    									<a href="./">跳蚤市场</a>
-    									<a href="./">汽车广场</a>
-    								</div>
-    							</div>
-    						</div>
-    						<div class="grid three">
-    							<div class="grid three">
-    								服务
-    							</div>
-    							<div class="grid nine">
-    								<div class="row h30">
-    									<a href="./">便民电话</a>
-    									<a href="./">车站列表</a>
-    								</div>
-    								<div class="row h30">
-    									<a href="./">天气预报</a>
-    									<a href="./">金湖地图</a>
-    								</div>
-    							</div>
-    						</div>
-    						<div class="grid three">
-    							<div class="grid three">
-    								兴趣
-    							</div>
-    							<div class="grid nine">
-    								<div class="row h30">
-    									<a href="./">游</a>
-    									<a href="./">棋</a>
-    									<a href="./">相</a>
-    								</div>
-    								<div class="row h30">
-    									<a href="./">书</a>
-    									<a href="./">影</a>
-    									<a href="./">频</a>
-    								</div>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="topbar unstyled">
-    				<div class="wrapper row percent font14px">
-    					<div class="three h30 overhidden" id="notice">
-    						<p>这是滚动字幕</p>
-    						<p>这是滚动字幕1</p>
-    						<p>这是滚动字幕2</p>
-    						<p>这是滚动字幕3</p>
-    						<p>这是滚动字幕4</p>
-    						<p>这是滚动字幕5</p>
-    					</div>
-    					<div class="nine">
-    						<form class="search">
-    							<input type="text" class="text" placeholder="请输入关键字" value="" name="">
-    							<input type="button" value="搜索" class="button" name="">
-    						</form>
-    						<div class="h30 mt10">
-    							<span>热词：</span>
-    							<abbr title="热点">热点</abbr>
-    							<abbr title="热点">热点</abbr>
-    							<abbr title="热点">热点</abbr>
-    							<abbr title="热点">热点</abbr>
-    							<abbr title="热点">热点</abbr>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
+                 <div class="sub">
+                     <a href="http://mobile.keqie.com">快捷导航</a>
+                 </div>
+             </div>
+         </div>
 
-    			<div class="unstyled">
-    				<div class="wrapper row percent font14px h30">
-    					<div class="three">
-    						<i class="icon home"></i>金湖生活网
-    						<a href="#popup" rel="popup">
-    							<img title="关注本站微信" id="navicon3" name="navicon3" src="http://www.52jinhu.com/source/plugin/wsh_wx/img/wx_jqr.gif">
-    						</a>
-    					</div>
-    					<div class="nine">
-    						<i class="icon stats"></i>
-    						<div>日: 571|昨日: 1024|帖子: 371290|会员: 28927|欢迎新会员: bkiik
-    							最新回复</div>
+         <div class="topbar unstyled">
+           <div class="wrapper row percent font14px">
+              <div class="grid three">
+                 <div class="grid three">
+                    互动
+                </div>
+                <div class="grid nine">
+                    <div class="row h30">
+                       <a href="./">金湖杂谈</a>
+                       <a href="./">交友</a>
+                   </div>
+                   <div class="row h30">
+                       <a href="./">有问必答</a>
+                       <a href="./">情感</a>
+                   </div>
+               </div>
+           </div>
+           <div class="grid three">
+             <div class="grid three">
+                生活
+            </div>
+            <div class="grid nine">
+                <div class="row h30">
+                   <a href="./">房产信息</a>
+                   <a href="./">求职招聘</a>
+               </div>
+               <div class="row h30">
+                   <a href="./">跳蚤市场</a>
+                   <a href="./">汽车广场</a>
+               </div>
+           </div>
+       </div>
+       <div class="grid three">
+         <div class="grid three">
+            服务
+        </div>
+        <div class="grid nine">
+            <div class="row h30">
+               <a href="./">便民电话</a>
+               <a href="./">车站列表</a>
+           </div>
+           <div class="row h30">
+               <a href="./">天气预报</a>
+               <a href="./">金湖地图</a>
+           </div>
+       </div>
+   </div>
+   <div class="grid three">
+     <div class="grid three">
+        兴趣
+    </div>
+    <div class="grid nine">
+        <div class="row h30">
+           <a href="./">游</a>
+           <a href="./">棋</a>
+           <a href="./">相</a>
+       </div>
+       <div class="row h30">
+           <a href="./">书</a>
+           <a href="./">影</a>
+           <a href="./">频</a>
+       </div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+<div class="topbar unstyled">
+    <div class="wrapper row percent font14px">
+       <div class="three h30 overhidden" id="notice">
+          <p>这是滚动字幕</p>
+          <p>这是滚动字幕1</p>
+          <p>这是滚动字幕2</p>
+          <p>这是滚动字幕3</p>
+          <p>这是滚动字幕4</p>
+          <p>这是滚动字幕5</p>
+      </div>
+      <div class="nine">
+          <form class="search">
+             <input type="text" class="text" placeholder="请输入关键字" value="" name="">
+             <input type="button" value="搜索" class="button" name="">
+         </form>
+         <div class="h30 mt10">
+             <span>热词：</span>
+             <abbr title="热点">热点</abbr>
+             <abbr title="热点">热点</abbr>
+             <abbr title="热点">热点</abbr>
+             <abbr title="热点">热点</abbr>
+             <abbr title="热点">热点</abbr>
+         </div>
+     </div>
+ </div>
+</div>
+<block name="top">
+ <div class="unstyled">
+    <div class="wrapper row percent font14px h30">
+       <div class="three">
+          <i class="icon home"></i>金湖生活网
+          <a href="#popup" rel="popup">
+             <img title="关注本站微信" id="navicon3" name="navicon3" src="http://www.52jinhu.com/source/plugin/wsh_wx/img/wx_jqr.gif">
+         </a>
+     </div>
+     <div class="nine">
+      <i class="icon stats"></i>
+      <div>日: 571|昨日: 1024|帖子: 371290|会员: 28927|欢迎新会员: bkiik
+         最新回复</div>
 
-    						</div>
-    					</div>
-    				</div>
+     </div>
+ </div>
+</div>
 
-    				<div class="popup" id="popup">
-    					<div class="head">
-    						欢迎关注我们的微信账号
-    						<del>×</del>
-    					</div>
-    					<div class="body">
-    						<img border="0" usemap="#Map" alt="wsh_wx" src="http://www.52jinhu.com/data/attachment/forum/201301/04/083505enek3jejdqy4f8yw.jpg">
-    						<div>1、扫描上面二维码，2、添加微信号: heduluntan</div>
-    					</div>
-    				</div>
+<div class="popup" id="popup">
+   <div class="head">
+      欢迎关注我们的微信账号
+      <del>×</del>
+  </div>
+  <div class="body">
+      <img border="0" usemap="#Map" alt="wsh_wx" src="http://www.52jinhu.com/data/attachment/forum/201301/04/083505enek3jejdqy4f8yw.jpg">
+      <div>1、扫描上面二维码，2、添加微信号: heduluntan</div>
+  </div>
+</div>
 
-    				<div class="unstyled">
-    					<div class="wrapper row percent font14px">
-    						<div class="six">
-    							as
-    						</div>
-    						<div class="six">
-    							<div id="tester" style="visibility:hidden;">
-    								<a href="#"><img src="__PUBLIC__/images/slide/img.jpg" width="640" height="480"/></a>
-    								<a href="#"><img src="__PUBLIC__/images/slide/img.jpg" width="640" height="480"/></a>
-    								<a href="#"><img src="__PUBLIC__/images/slide/img.jpg" width="640" height="480"/></a>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    				<script type="text/javascript">
-    					$(function() {
-    						$("#tester").KinSlideshow();
-    					});
-    				</script>
+<div class="unstyled">
+   <div class="wrapper row percent font14px">
+      <div class="six">
+         as
+     </div>
+     <div class="six">
+         <div id="tester" style="visibility:hidden;">
+            <a href="#"><img src="__PUBLIC__/images/slide/img.jpg" width="640" height="480"/></a>
+            <a href="#"><img src="__PUBLIC__/images/slide/img.jpg" width="640" height="480"/></a>
+            <a href="#"><img src="__PUBLIC__/images/slide/img.jpg" width="640" height="480"/></a>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+   $(function() {
+      $("#tester").KinSlideshow();
+  });
+</script>
 
-    				<div class="unstyled">
-    					<div class="wrapper row percent font14px">
-    						<div class="three b_gray">
-    							这是图片
-    						</div>
-    						<div class="six">
-    							<div class="taber">
-    								<div class="head">
-    									<a href="#" lang="t1" class="selected">最新帖子</a>
-    									<a href="#" lang="t2">最新回复</a>
-    									<a href="#" lang="t3">精华主题</a>
-    								</div>
-    								<div class="body" id="t1">
-    									<ul class="unstyled">
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    									</ul>
-    								</div>
-    								<div class="body" id="t2" style="display:none;">
-    									<ul class="unstyled">
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    									</ul>
-    								</div>
-    								<div class="body" id="t3" style="display:none;">
-    									<ul class="unstyled">
-    										<li><a href="./">这是精华主题。。。。</a></li>
-    										<li><a href="./">这是精华主题。。。。</a></li>
-    										<li><a href="./">这是精华主题。。。。</a></li>
-    										<li><a href="./">这是精华主题。。。。</a></li>
-    										<li><a href="./">这是精华主题。。。。</a></li>
-    										<li><a href="./">这是精华主题。。。。</a></li>
-    									</ul>
-    								</div>
-    							</div>
-    						</div>
-    						<div class="three">
-    							<div class="taber">
-    								<div class="head">
-    									<a href="#" lang="t4" class="selected">在线排行</a>
-    									<a href="#" lang="t5">积分排行</a>
-    								</div>
-    								<div class="body" id="t4">
-    									<ul class="unstyled">
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    										<li><a href="./">这是帖子。。。。。。</a></li>
-    									</ul>
-    								</div>
-    								<div class="body" id="t5" style="display:none;">
-    									<ul class="unstyled">
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    										<li><a href="./">这是回复。。。。。。</a></li>
-    									</ul>
-    								</div>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
+<div class="unstyled">
+   <div class="wrapper row percent font14px">
+      <div class="three b_gray">
+         这是图片
+     </div>
+     <div class="six">
+         <div class="taber">
+            <div class="head">
+               <a href="#" lang="t1" class="selected">最新帖子</a>
+               <a href="#" lang="t2">最新回复</a>
+               <a href="#" lang="t3">精华主题</a>
+           </div>
+           <div class="body" id="t1">
+               <ul class="unstyled">
+                  <li><a href="./">这是帖子。。。。。。</a></li>
+                  <li><a href="./">这是帖子。。。。。。</a></li>
+                  <li><a href="./">这是帖子。。。。。。</a></li>
+                  <li><a href="./">这是帖子。。。。。。</a></li>
+                  <li><a href="./">这是帖子。。。。。。</a></li>
+                  <li><a href="./">这是帖子。。。。。。</a></li>
+              </ul>
+          </div>
+          <div class="body" id="t2" style="display:none;">
+           <ul class="unstyled">
+              <li><a href="./">这是回复。。。。。。</a></li>
+              <li><a href="./">这是回复。。。。。。</a></li>
+              <li><a href="./">这是回复。。。。。。</a></li>
+              <li><a href="./">这是回复。。。。。。</a></li>
+              <li><a href="./">这是回复。。。。。。</a></li>
+              <li><a href="./">这是回复。。。。。。</a></li>
+          </ul>
+      </div>
+      <div class="body" id="t3" style="display:none;">
+       <ul class="unstyled">
+          <li><a href="./">这是精华主题。。。。</a></li>
+          <li><a href="./">这是精华主题。。。。</a></li>
+          <li><a href="./">这是精华主题。。。。</a></li>
+          <li><a href="./">这是精华主题。。。。</a></li>
+          <li><a href="./">这是精华主题。。。。</a></li>
+          <li><a href="./">这是精华主题。。。。</a></li>
+      </ul>
+  </div>
+</div>
+</div>
+<div class="three">
+ <div class="taber">
+    <div class="head">
+       <a href="#" lang="t4" class="selected">在线排行</a>
+       <a href="#" lang="t5">积分排行</a>
+   </div>
+   <div class="body" id="t4">
+       <ul class="unstyled">
+          <li><a href="./">这是帖子。。。。。。</a></li>
+          <li><a href="./">这是帖子。。。。。。</a></li>
+          <li><a href="./">这是帖子。。。。。。</a></li>
+          <li><a href="./">这是帖子。。。。。。</a></li>
+          <li><a href="./">这是帖子。。。。。。</a></li>
+          <li><a href="./">这是帖子。。。。。。</a></li>
+      </ul>
+  </div>
+  <div class="body" id="t5" style="display:none;">
+   <ul class="unstyled">
+      <li><a href="./">这是回复。。。。。。</a></li>
+      <li><a href="./">这是回复。。。。。。</a></li>
+      <li><a href="./">这是回复。。。。。。</a></li>
+      <li><a href="./">这是回复。。。。。。</a></li>
+      <li><a href="./">这是回复。。。。。。</a></li>
+      <li><a href="./">这是回复。。。。。。</a></li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    			</div>
-    			<!-- header /-->
-    			<div class="w960 contaner">
-    				<div class="wrapper">
-    					<block name="content"></block>
+</div>
+</block>
+<!-- header /-->
+<div class="w960 contaner">
+    <div class="wrapper">
+       <block name="content"></block>
 
-    				</div>
+   </div>
 
-    				<!-- 对联 -->
-    				{:W('Ad/index',array('cate'=>0,'type'=>3))}
-    				<!-- 对联 -->
+   <!-- 对联 -->
+   {:W('Ad/index',array('cate'=>0,'type'=>3))}
+   <!-- 对联 -->
 
-    				<div class="footer">
-    					Powered by <font class="danley"><a href="http://www.keqie.com">Keqie</a></font> V1.0
-    					<br>
-    					&copy; 2001-2012 <font class="danley"><a href="http://www.keqie.com">Keqie</a></font> Inc.
-    				</div>
-    				<script type="text/javascript">
+   <div class="footer">
+       Powered by <font class="danley"><a href="http://www.keqie.com">Keqie</a></font> V1.0
+       <br>
+       &copy; 2001-2012 <font class="danley"><a href="http://www.keqie.com">Keqie</a></font> Inc.
+   </div>
+   <script type="text/javascript">
 			            // 设为首页
 			            function SetHome(obj, vrl) {
 			            	try {
@@ -396,6 +405,6 @@
 						});
 			       </script>
 			       {:W('Ad/index',array('cate'=>0,'type'=>4))}
-		<block name="foot_js"></block>
-	</body>
-</html>
+                 <block name="foot_js"></block>
+             </body>
+             </html>

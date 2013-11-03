@@ -1,0 +1,30 @@
+<extend name="Public:fe_theme" />
+<block name="top"></block>
+<block name="content">
+
+	<div class="row">
+		<div class="three">&nbsp;</div>
+		<div class="six">
+			<form enctype="multipart/form-data" method="POST" action="__SELF__">
+				<fieldset>
+					<legend>注册表单</legend>
+					<p><label>姓名 <small>字符在3~9位</small></label>
+						<input type="text" class="text radius" placeholder="请填写真实的姓名" name="name">
+					</p>
+					<p><label>邮箱 <small>字符在3~9位</small></label>
+						<input type="text" class="text radius" placeholder="请填写真实的姓名" name="email">
+					</p>
+					<p><label>密码 <small>字符在3~9位</small></label>
+						<input type="password" class="text radius" placeholder="请填写真实的姓名" name="pwd">
+					</p>
+					<p>
+						<label></label>
+						<input type="submit" value="提交" class="button blue" name="">
+						<input type="reset" value="重置" class="button" name="重置">
+					</p>
+				</fieldset>
+			</form>
+		</div>
+		<div class="three"></div>
+	</div>
+</block>

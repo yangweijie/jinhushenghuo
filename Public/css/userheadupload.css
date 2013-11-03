@@ -1,0 +1,187 @@
+.upload_btn {
+    background: none repeat scroll 0 0 #F3F3F3;
+    border: 1px solid #EBEBEB;
+    color: #999999;
+    cursor: pointer;
+    display: block;
+    height: 185px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 185px;
+}
+.upload_btn span {
+    display: block;
+    line-height: 39px;
+}
+.upload_btn em {
+    background: url("../images/upload_btn.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 18px;
+    line-height: 20em;
+    margin: 10px 5px 10px 0;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 18px;
+}
+.upload_btn:hover em {
+    background-position: -19px 0;
+}
+.ke-upload-file {
+    display: block;
+    font-size: 500px;
+    height: 185px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 185px;
+    z-index: 9999;
+}
+.ke-upload-area {
+    height: 185px;
+    width: 185px;
+}
+.ke-button-common {
+    display: none;
+    height: 185px;
+    width: 185px;
+}
+
+/* 修改头像 */
+.update-pic {
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+.update-pic .upload-area {
+	float: left;
+	position: relative;
+	margin-right: 50px;
+}
+.update-pic .file-type {
+	position: absolute;
+	top: 90px;
+	left: 2px;
+	padding: 0 15px;
+	width: 170px;
+	line-height: 1.4;
+	font-size: 12px;
+	color: #A8A8A3;
+	text-align: center;
+}
+.update-pic .preview {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	z-index: 11;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	background:#fff;
+}
+.tcrop {
+	font-weight: bold;
+	clear: right;
+	font-size: 14px;
+}
+.update-pic .crop {
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	background: url(../images/mystery.png) no-repeat center center #EEEEEE;
+}
+.crop img{ display:none}
+.crop100 {
+	width: 200px;
+	height: 200px;
+}
+.crop60 {
+	margin-left: 20px;
+	width: 60px;
+	height: 60px;
+}
+.update-pic .uppic-btn {
+	display: block;
+	float: left;
+    width: 89px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #FFF;
+    text-align: center;
+    vertical-align: middle;
+	/*background: url(../images/member_bg.png) no-repeat scroll 0 -35px;*/
+	background-color: #348FD4;
+}
+.update-pic .uppic-btn:hover {
+	text-decoration: none;
+	background-color: #2F81BF;
+}
+.update-pic .save-pic {
+	clear: left;
+	margin-right: 20px;
+}
+
+
+/**
+ * 描    述：个人中心->帐户设置里修改头像上传样式
+ */
+
+.uploadify {
+	position: relative;
+	border: 2px solid #E1E1E1;
+	background-color: #F5F5F5;
+}
+.swfupload {
+	left: 0;
+}
+.uploadify-button  {
+	line-height: 120px!important;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	color: #666;
+	text-align: center;
+}
+.uploadify-button .userup-icon {
+	display: inline-block;
+	margin-right: 3px;
+	width: 16px;
+	height: 16px;
+	vertical-align: -2px;
+	background: url(../img/icon_bg.png) no-repeat -150px -75px;
+}
+.uploadify-queue {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 204px;
+	height: 204px;
+}
+.uploadify-queue-item {
+	position: relative;
+	padding: 90px 15px 0;
+	z-index: 9;
+	width: 170px;
+	height: 110px;
+	background-color: #FFF;
+}
+.uploadify-queue .fileName,
+.uploadify-queue .data {
+	display: none;
+}
+.uploadify-queue .uploadify-progress {
+	float: left;
+	margin-top: 2px;
+	width: 150px;
+}
+.uploadify-queue .cancel {
+	float: right;
+}
+.uploadify-queue .uploadify-progress-bar {
+	height: 10px;
+	line-height: 10px;
+	font-size: 0;
+	background-color: #72B939;
+}

@@ -1,0 +1,81 @@
+<extend name="Public:fe_theme" />
+<block name="js">
+	<link rel="stylesheet" href="__PUBLIC__/css/userheadupload.css">
+</block>
+<block name="top"></block>
+<block name="content">
+	<div class="row">
+		<div class="one">&nbsp;</div>
+		<div class="ten">
+			<div class="taber">
+				<div class="head">
+					<a href="javascript:;" lang="t4" class="selected">基本信息</a>
+					<a href="javascript:;" lang="t5">修改头像</a>
+				</div>
+				<div class="body" id="t4">
+					<p>
+						<img src="{:cookie('big')}" width="200">
+					</p>
+					<p>
+						<span class="gree">{$info.name}</span>
+						<span>积分：180</span>
+					</p>
+					<p>绑定邮箱 {$info.email}</p>
+				</div>
+				<div class="body" id="t5" style="display:none;">
+					<link href="__PUBLIC__/js/jcrop/css/jquery.Jcrop.min.css" rel="stylesheet" />
+					<script src="__PUBLIC__/js/kind.min.js"></script>
+					<script src="__PUBLIC__/js/jcrop/jquery.Jcrop.min.js"></script>
+					<script src="__PUBLIC__/js/avatar.js"></script>
+					<script>
+						$(function(){
+							$('#save-pic').click(function(){
+								var w = $('#w').val();
+								var h = $('#w').val();
+								var avatar = $('#avatar_src').val();
+								if(avatar == ''){
+									alert('请上传一张头像');
+									return false;
+								}
+								if(w=='' || h==''){
+									alert('请选择裁切区域');
+									return false;
+								}
+								$('form[name="set_avatar"]').submit();
+							})
+						})
+					</script>
+					<div id="avatar_perview_area" style="padding-left:20px;width:300px;height:300px; display:none;border:1px #ccc solid;overflow:hidden;float:left"></div>
+					<div id="upload-area" class="update-pic cf" style="padding-left:20px; margin:0;width:300px; height:300px; float:left;">
+						<div class="upload-area">
+							<a href="javascript:void(0);" class="upload_btn">
+								<span><em>+</em>添加图片</span>
+								<input upload_url="{:U("User/avatar")}" type="button" id="uploadButton" value="Upload" style="display:none" />
+							</a>
+							<div class="file-type">
+								支持JPG,PNG，文件小于2MB，尺寸大于300*300,真实高清头像更受欢迎！</div>
+								<div class="preview hidden" id="preview-hidden"></div>
+							</div>
+							<div id="upload-load" style="display:none;">正在上传...</div>
+						</div>
+						<form name="set_avatar" action="{:U("User/avatar",array("do"=>"save"))}" method="post" class="update-pic cf" style="padding-left:30px;margin:0;width:300px; float:left">
+							<div class="fl">
+								<input type="hidden" id="x" name="x" />
+								<input type="hidden" id="y" name="y" />
+								<input type="hidden" id="w" name="w" />
+								<input type="hidden" id="h" name="h" />
+								<input type="hidden" id='avatar_src' name='avatar_src'/>
+								<input type="hidden" id="aspectRatio" name="aspectRatio" />
+								<div class="tcrop">头像预览</div>
+								<div class="crop crop100"><img id="crop-preview-100" class="jcrop-preview" src="" alt=""></div>
+								<div class="crop crop60"><img id="crop-preview-60" class="jcrop-preview" src="" alt=""></div>
+								<a class="uppic-btn save-pic" id="save-pic" href="javascript:;">保存</a>
+								<a class="uppic-btn reupload-img" href="javascript:reset_upload();">重新上传</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="one"></div>
+		</div>
+	</block>
