@@ -23,6 +23,10 @@ function file_iconv($name){
 function admin_log($content,$table){
 
 }
+//获取用户头像路径
+function get_avatar($user,$type="big"){
+	return empty($user["{$type}_avatar"])? '/Public/images/mystery.png' : is_file(".{$user["{$type}_avatar"]}") ? $user["{$type}_avatar"] : '/Public/images/mystery.png';
+}
 
 function url($link='', $param='', $default=''){
 	return $default? $default: U($link,$param);
@@ -200,6 +204,16 @@ function get_admin_name() {
 function get_name(){
 	$user = session(C('FRONT_USER_AUTH_KEY'));
 	return $user['name'];
+}
+
+function get_data($model,$id){
+	$record = M($model)->find($id);
+	return $record;
+}
+
+function get_login_user(){
+	$user = session(C('FRONT_USER_AUTH_KEY'));
+	return $user;
 }
 
 //判断用户是否登录

@@ -60,12 +60,12 @@ class Page2 {
             $this->nowPage  =   $this->totalPages;
         }
         $this->firstRow     =   $this->listRows*($this->nowPage-1);
-        if(!empty($url))    $this->url  =   $url;
+        if(!empty($url))    $this->url = $url;
     }
 
     public function setConfig($name,$value) {
         if(isset($this->config[$name])) {
-            $this->config[$name]    =   $value;
+            $this->config[$name] = $value;
         }
     }
 
